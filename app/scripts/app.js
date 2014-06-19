@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name roverAppApp
+ * @name roverApp
  * @description
- * # roverAppApp
+ * # roverApp
  *
  * Main module of the application.
  */
 angular
-  .module('roverAppApp', [
+  .module('roverApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
