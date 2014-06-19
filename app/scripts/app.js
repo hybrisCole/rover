@@ -27,7 +27,24 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/vista3', {
+        templateUrl: 'views/vista3.html',
+        controller: 'Vista3Ctrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+  }).animation('.my-crazy-animation', function() {
+    return {
+      enter: function(element,done) {
+        $(element).velocity('fadeIn',
+          {
+            duration:250,
+            complete:function(){
+              done();
+            }
+          }
+        );
+      }
+    };
   });
