@@ -390,6 +390,7 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
+      'jshint',
       'clean:server',
       'wiredep',
       'concurrent:server',
@@ -413,6 +414,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'jshint',
     'clean:dist',
     'wiredep',
     'useminPrepare',
