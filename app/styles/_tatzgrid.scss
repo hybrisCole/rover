@@ -1,0 +1,69 @@
+*,
+*:after,
+*:before {
+  margin  : 0;
+  padding : 0;
+  /* Removes padding behaviour on widths */
+  -webkit-box-sizing : border-box;
+}
+
+/* Attribute selector */
+[class*='tatz-']{
+  float : left;
+}
+ 
+/* Floats last ".tatz-" to the right */
+[class*='tatz-']:last-of-type {
+  float : right;
+}
+ 
+/* Clearfix */
+.row:after{
+  content : "";
+  display : table;
+  clear   : both;
+}
+
+/* Main Widths */
+@for $i from 1 through 10{
+	.tatz-#{$i} {
+		width : #{$i * 10%};
+	}
+}
+
+@for $i from 1 through 9{
+	.inner-l-#{$i} {
+		padding-left : #{$i * 10%};
+	}
+
+	.inner-r-#{$i} {
+		padding-right : #{$i * 10%};
+	}
+
+	.inner-t-#{$i} {
+		padding-top : #{$i * 10%};
+	}
+
+	.inner-b-#{$i} {
+		padding-bottom : #{$i * 10%};
+	}
+	.outter-l-#{$i} {
+		margin-left : #{$i * 10%};
+	}
+
+	.outter-r-#{$i} {
+		margin-right : #{$i * 10%};
+	}
+
+	.outter-t-#{$i} {
+		margin-top : #{$i * 10%};
+	}
+
+	.outter-b-#{$i} {
+		margin-bottom : #{$i * 10%};
+	}
+}
+
+
+
+

@@ -1,0 +1,48 @@
+.right{
+	float : right!important; 
+}
+
+.left{
+	float : left!important; 
+}
+
+// Colors list.
+$colors :
+  snow   #ffffff,
+  night  #000000
+;
+
+$porcentuals :
+	one   10%,
+	two   20%,
+	three 30%,
+	four  40%,
+	six   60%,
+	seven 70%,
+	eight 80%,
+	nine  90%,
+	ten   100%
+;
+
+// Get the value of a key on a pseudo map.
+@function getValueByKey($map, $key) {
+  @each $index in $map {
+    @if nth($index, 1) == $key {
+      @return nth($index, 2);
+    }
+  }
+}
+
+// Get a color by it name on the colors list.
+@function getColor($colorName) {
+  @return getValueByKey($colors, $colorName);
+}
+
+// Get a padding by it name on the paddings list.
+@function getPorcentual($porcentualVal) {
+  @return getValueByKey($porcentuals, $porcentualVal);
+}
+
+
+
+
