@@ -20,8 +20,8 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/vista3.html',
+        controller: 'Vista3Ctrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
@@ -37,9 +37,19 @@ angular
   }).animation('.my-crazy-animation', function() {
     return {
       enter: function(element,done) {
-        $(element).velocity('fadeIn',
+        $(element).velocity({left:'0'},
           {
-            duration:250,
+            duration:400,
+            complete:function(){
+              done();
+            }
+          }
+        );
+      },
+      leave: function(element,done) {
+        $(element).velocity({left:'100%'},
+          {
+            duration:400,
             complete:function(){
               done();
             }

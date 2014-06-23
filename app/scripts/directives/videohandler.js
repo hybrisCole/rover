@@ -4,7 +4,7 @@ angular.module('roverApp')
   .directive('videohandler', function () {
     return {
       restrict: 'A',
-      link : function(scope, element, attrs){
+      link : function(scope, element){
       	var video = element[0];
         video.muted = true;
         video.loop  = true; 
