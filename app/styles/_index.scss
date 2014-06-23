@@ -30,8 +30,27 @@
 					height           : 40px;
 					margin-top       : 20px;  
 					border-bottom    : 1px solid getColor(snow); 
+					padding          : 0; 
+				  font-size        : 24px;
+        	color            : getColor(snow);
+				}
+				::-webkit-input-placeholder {
+   				color       : getColor(snow);
+   				font-size   : 24px; 
 				}
 			}
+		}
+		.btn{ 
+			font-family    : helvetica; 
+			border         : 1px solid getColor(snow);
+			font-size      : 30px;
+			color          : getColor(snow); 
+			text-align     : center; 
+			border-radius  : 5px;
+			margin         : 40px auto 0 auto;
+			padding        : 15px;
+			width          : 170px;   
+			letter-spacing : 2px;
 		}
 	}
 }

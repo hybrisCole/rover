@@ -39,7 +39,8 @@ angular
       enter: function(element,done) {
         $(element).velocity({left:'0'},
           {
-            duration:400,
+            easing:'ease',
+            duration:150,
             complete:function(){
               done();
             }
@@ -49,7 +50,8 @@ angular
       leave: function(element,done) {
         $(element).velocity({left:'100%'},
           {
-            duration:400,
+            easing:'ease',
+            duration:150,
             complete:function(){
               done();
             }
