@@ -20,18 +20,14 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div class="header row" ng-show="menu">
+        <div class="tatz-10 cont">
+          
+        </div>
+    </div>
+    
     <div class="container">
-      <div class="header" ng-show="menu">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#/vista3">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">roverApp</h3>
-      </div>
-
       <div ng-view="" ng-class="viewAnimation" class="rover-container"></div>
-      
     </div>
 
 

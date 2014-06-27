@@ -12,5 +12,4 @@ angular.module('roverApp')
       $scope.viewAnimation = 'slide-velocity-previous';
       $location.path(location);
     };
-
   });

@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+
 angular
   .module('roverApp', [
     'ngAnimate',
@@ -24,8 +25,8 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
+      .when('/home', {
+        templateUrl: 'views/home.html',
         controller: 'AboutCtrl'
       })
       .when('/vista3', {
@@ -35,4 +36,12 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  }).run(function($rootScope, $location){
+    $rootScope.$on('$locationChangeStart',function () {
+      if($location.path() !== '/'){
+        $rootScope.menu = true;
+      }else{
+        $rootScope.menu = false;
+      }
+    });
   });
