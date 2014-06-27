@@ -27,7 +27,7 @@ angular
       })
       .when('/home', {
         templateUrl: 'views/home.html',
-        controller: 'AboutCtrl'
+        controller: 'HomeCtrl'
       })
       .when('/vista3', {
         templateUrl: 'views/vista3.html',
@@ -36,10 +36,12 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).run(function($rootScope, $location){
+  }).run(function($rootScope, $location, $timeout){
     $rootScope.$on('$locationChangeStart',function () {
       if($location.path() !== '/'){
-        $rootScope.menu = true;
+        $timeout(function() {
+          $rootScope.menu = true;
+        }, 700);
       }else{
         $rootScope.menu = false;
       }

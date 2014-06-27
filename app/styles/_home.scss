@@ -1,5 +1,20 @@
 .home{
+	background: url(../images/home_bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  min-height : 1000px;  
 	.slide{
-		
+		ul{
+			margin     : 0; 
+			padding    : 0;
+			list-style : none; 
+			overflow-y : hidden;
+			overflow-x : scroll; 
+			width      : 2000px;
+			height     : 150px; 
+			li{ 
+				display      : inline;
+				margin-right : 15px; 
+			} 
+		}
 	}
 }

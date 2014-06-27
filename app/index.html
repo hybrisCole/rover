@@ -25,10 +25,9 @@
           
         </div>
     </div>
-    
-    <div class="container">
-      <div ng-view="" ng-class="viewAnimation" class="rover-container"></div>
-    </div>
+
+    <div ng-view="" ng-class="viewAnimation" class="rover-container"></div>
+
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -59,16 +58,19 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/velocity/jquery.velocity.js"></script>
     <script src="bower_components/ng-slide-velocity/ng-slide-velocity.js"></script>
+    <script src="bower_components/jquery.scrollTo/jquery.scrollTo.js"></script>
+    <script src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/home.js"></script>
         <script src="scripts/controllers/vista3.js"></script>
         <script src="scripts/directives/videohandler.js"></script>
         <script src="scripts/controllers/mother.js"></script>
+        <script src="scripts/directives/carousel.js"></script>
         <!-- endbuild -->
 </body>
 </html>

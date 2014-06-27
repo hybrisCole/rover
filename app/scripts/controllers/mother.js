@@ -2,7 +2,6 @@
 
 angular.module('roverApp')
   .controller('MotherCtrl', function ($scope,$location) {
-    $scope.val = false;
     $scope.viewAnimation = 'slide-velocity-next';
     $scope.goTo = function(location){
       $scope.viewAnimation = 'slide-velocity-next';
