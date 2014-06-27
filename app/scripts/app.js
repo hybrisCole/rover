@@ -33,6 +33,10 @@ angular
         templateUrl: 'views/vista3.html',
         controller: 'Vista3Ctrl'
       })
+      .when('/accesorios', {
+        templateUrl: 'views/accesorios.html',
+        controller: 'AccesoriosCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
