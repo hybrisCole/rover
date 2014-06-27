@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+
 angular
   .module('roverApp', [
     'ngAnimate',
@@ -20,11 +21,11 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/vista3.html',
-        controller: 'Vista3Ctrl'
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
+      .when('/home', {
+        templateUrl: 'views/home.html',
         controller: 'AboutCtrl'
       })
       .when('/vista3', {
@@ -59,4 +60,12 @@ angular
         );
       }
     };
+  }).run(function($rootScope, $location){
+    $rootScope.$on('$locationChangeStart',function () {
+      if($location.path() !== '/'){
+        $rootScope.menu = true;
+      }else{
+        $rootScope.menu = false;
+      }
+    });
   });

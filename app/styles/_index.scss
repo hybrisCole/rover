@@ -1,4 +1,7 @@
 .index{
+	a{
+		text-decoration : none; 
+	}
 	.videoBg{
   	position        : fixed; 
   	right           : 0;
@@ -51,6 +54,16 @@
 			padding        : 15px;
 			width          : 170px;   
 			letter-spacing : 2px;
+		}
+		.contactar{
+			margin-top  : 40px; 
+			font-family : helvetica;
+			a{ 
+				color          : getColor(snow);
+				font-size      : 15px;
+				text-align     : center;  
+				letter-spacing : 2px; 
+			}
 		}
 	}
 }

@@ -3,6 +3,7 @@
 @import "tatzgrid";
 @import "helpers";
 @import "index";
+@import "home";
 
 *:focus { outline: none }
 
@@ -16,6 +17,14 @@
 /* Space out content a bit */
 body {
   padding : 0;
+}
+
+.header{
+  .cont{
+    background-color   : getColor(snow); 
+    -webkit-box-shadow : 1px 1px 10px 2px rgba(0,0,0,0.5);
+    height             : 60px; 
+  } 
 }
 
 .container {
@@ -35,14 +44,6 @@ body {
   .footer {
     padding-left: 0;
     padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }
 
