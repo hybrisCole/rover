@@ -41,11 +41,14 @@ angular
         redirectTo: '/'
       });
   }).run(function($rootScope, $location, $timeout){
+    
+    $rootScope.menu = false;
+    
     $rootScope.$on('$locationChangeStart',function () {
       if($location.path() !== '/'){
         $timeout(function() {
           $rootScope.menu = true;
-        }, 700);
+        }, 500);
       }else{
         $rootScope.menu = false;
       }

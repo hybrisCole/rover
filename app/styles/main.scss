@@ -23,16 +23,20 @@ body {
   .cont{
     background-color   : getColor(snow); 
     -webkit-box-shadow : 1px 1px 10px 2px rgba(0,0,0,0.5);
-    height  
+    height             : 60px;
     position           : absolute;
     z-index            : 100;   
   }
-  .logo{
+  .logo-head{
+    width   : 115px;
+    margin  : 6px auto 0 auto;
     img{
-      width   : 150px;
+      width   : 115px;
       display : block;
-      margin  : 0 auto;
     }
+  }
+  .back{
+    margin: -35px 20px;
   }
 }
 
