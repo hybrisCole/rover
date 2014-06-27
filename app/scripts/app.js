@@ -35,31 +35,6 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).animation('.my-crazy-animation', function() {
-    return {
-      enter: function(element,done) {
-        $(element).velocity({left:'0'},
-          {
-            easing:'ease',
-            duration:150,
-            complete:function(){
-              done();
-            }
-          }
-        );
-      },
-      leave: function(element,done) {
-        $(element).velocity({left:'100%'},
-          {
-            easing:'ease',
-            duration:150,
-            complete:function(){
-              done();
-            }
-          }
-        );
-      }
-    };
   }).run(function($rootScope, $location){
     $rootScope.$on('$locationChangeStart',function () {
       if($location.path() !== '/'){
