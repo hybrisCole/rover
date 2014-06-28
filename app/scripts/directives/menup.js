@@ -9,20 +9,19 @@ angular.module('roverApp')
 
       	var history  = [];
 
-      	scope.$on('$routeChangeSuccess', function(event){
-      		history.push($location.path());
-      		console.log(history);
+      	scope.$on('$routeChangeSuccess', function(){
+      		if($location.path() !== history[history.length -1]){
+      			history.push($location.path());
+      		}
       	});
 
       	scope.back = function(){
       		 if(history.length > 1){
             	history.pop();
-            	console.log(history);
           	}
           	scope.goback = history[history.length - 1];
-          	console.log(scope.goback);
           	$location.path(scope.goback);
-      	}
+      	};
         
       }
     };
