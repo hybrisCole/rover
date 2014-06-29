@@ -13,6 +13,19 @@ $font-sizes        :
   large    22px,
   x-large  30px;
 
+
+$porcentuals :
+  one   10%,
+  two   20%,
+  three 30%,
+  four  40%,
+  six   60%,
+  seven 70%,
+  eight 80%,
+  nine  90%,
+  ten   100%
+;
+
 // Spacing sizes for padding and margins.
 $spaces :
   xx-small 5px,
@@ -111,6 +124,12 @@ $spaces :
 }
 
 // Font configuration.
-$helveticaneueroman           : 'helveticaneueroman';
-$helveticaneuebd              : 'helveticaneuebds';
-$font-primary      : 'helveticaneueroman',sans-serif;
+$helveticaneueroman      : 'helveticaneueroman';
+$helveticaneuebd         : 'helveticaneuebds';
+$robotobold              : 'robotobold';
+$robotoitalic            : 'robotoitalic';
+$robotomedium            : 'robotomedium';
+$robotomediumitalic      : 'robotomediumitalic';
+$robotoregular           : 'robotoregular';
+
+$font-primary            : 'helveticaneueroman',sans-serif;

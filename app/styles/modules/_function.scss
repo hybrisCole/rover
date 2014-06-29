@@ -1,28 +1,4 @@
-.right{
-	float : right!important; 
-}
 
-.left{
-	float : left!important; 
-}
-
-// Colors list.
-$colors :
-  snow   #ffffff,
-  night  #000000
-;
-
-$porcentuals :
-	one   10%,
-	two   20%,
-	three 30%,
-	four  40%,
-	six   60%,
-	seven 70%,
-	eight 80%,
-	nine  90%,
-	ten   100%
-;
 
 // Get the value of a key on a pseudo map.
 @function getValueByKey($map, $key) {
@@ -38,11 +14,20 @@ $porcentuals :
   @return getValueByKey($colors, $colorName);
 }
 
+// Get a font-size measure by it name on the
+// font-sizes list.
+@function getFontSize($sizeName) {
+  @return getValueByKey($font-sizes, $sizeName);
+}
+
+// Get a space measure by it name on the spaces
+// list.
+@function getSpace($spaceName) {
+  @return getValueByKey($spaces, $spaceName);
+}
+
 // Get a padding by it name on the paddings list.
 @function getPorcentual($porcentualVal) {
   @return getValueByKey($porcentuals, $porcentualVal);
 }
-
-
-
 
