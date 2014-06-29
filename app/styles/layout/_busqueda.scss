@@ -1,0 +1,8 @@
+.busqueda-box{
+  @extend .padding-small;
+  @extend .text-x-large;
+  @extend .text-center;
+  color: getColor(snow);
+  background-color: getColor(celeste);
+  font-family: 'robotolight';
+}
