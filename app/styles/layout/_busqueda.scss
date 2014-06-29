@@ -1,22 +1,43 @@
 .busqueda-box{
   @extend .padding-small;
-  @extend .text-x-large;
   @extend .text-center;
-  color: getColor(snow);
   background-color: getColor(celeste);
-  font-family: 'robotolight';
-  font-weight: 700;
+  .busqueda-titulo{
+    @extend .text-x-large;
+    color: getColor(snow);
+    font-family: 'robotolight';
+  }
   .busqueda-campo{
-    @include border-radius(4px, 4px);
+    @include border-radius(8px, 8px);
     @extend .padding-xx-small;
     @extend .margin-top-small;
     @extend .text-large;
-    color: getColor(snow);
     color: getColor(night);
     width: 100%;
     border: 0;
-    font-family: 'roboto';
-    font-weight: 300;
+    font-family: 'robotoregular';
+  }
+}
 
+.cliente-box{
+  @extend .padding-small;
+  @extend .text-left;
+  .cliente-nombre{
+    @extend .text-x-large;
+    color: getColor(celeste);
+    @extend .margin-bottom-xx-small;
+    font-family: 'robotolight';
+  }
+  .cliente-auto{
+    @extend .text-medium;
+    @extend .margin-bottom-xx-small;
+    color: getColor(night);
+    font-family: 'robotobold';
+  }
+  .cliente-vin{
+    @extend .text-medium;
+    @extend .margin-bottom-xx-small;
+    color: getColor(night);
+    font-family: 'robotoregular';
   }
 }
