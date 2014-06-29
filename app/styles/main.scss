@@ -1,5 +1,12 @@
 // bower:scss
 // endbower
+
+@import "compass";
+@import "compass/reset";
+
+// Configuration files.
+@import "config/theme";
+
 @import "tatzgrid";
 @import "helpers";
 @import "index";

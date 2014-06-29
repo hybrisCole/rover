@@ -1,0 +1,50 @@
+// Colors array.
+$colors :
+  snow   #ffffff,
+  night  #000000
+;
+
+$font-sizes        :
+  xx-small 10px,
+  x-small  12px,
+  small    14px,
+  medium   16px,
+  x-medium 18px,
+  large    22px,
+  x-large  30px;
+
+// Spacing sizes for padding and margins.
+$spaces :
+  xx-small 5px,
+  x-small  10px,
+  small    15px,
+  medium   20px,
+  large    25px,
+  x-large  50px;
+
+@font-face {
+  font-family: 'helveticaneuebd';
+  src: url('../fonts/helveticaneue/helveticaneueltstd-bd-webfont.eot');
+  src: url('../fonts/helveticaneue/helveticaneueltstd-bd-webfont?#iefix') format('embedded-opentype'),
+  url('../fonts/helveticaneue/helveticaneueltstd-bd-webfont.woff') format('woff'),
+  url('../fonts/helveticaneue/helveticaneueltstd-bd-webfont.ttf') format('truetype'),
+  url('../fonts/helveticaneue/helveticaneueltstd-bd-webfont.svg#helveticaneuebd') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'helveticaneueroman';
+  src: url('../fonts/helveticaneue/helveticaneueltstd-roman-webfont.eot');
+  src: url('../fonts/helveticaneue/helveticaneueltstd-roman-webfont?#iefix') format('embedded-opentype'),
+  url('../fonts/helveticaneue/helveticaneueltstd-roman-webfont.woff') format('woff'),
+  url('../fonts/helveticaneue/helveticaneueltstd-roman-webfont.ttf') format('truetype'),
+  url('../fonts/helveticaneue/helveticaneueltstd-roman-webfont.svg#helveticaneueroman') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Font configuration.
+$helveticaneueroman           : 'helveticaneueroman';
+$helveticaneuebd              : 'helveticaneuebds';
+$font-primary      : 'helveticaneueroman',sans-serif;
