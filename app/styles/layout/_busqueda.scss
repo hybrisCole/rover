@@ -5,4 +5,18 @@
   color: getColor(snow);
   background-color: getColor(celeste);
   font-family: 'robotolight';
+  font-weight: 700;
+  .busqueda-campo{
+    @include border-radius(4px, 4px);
+    @extend .padding-xx-small;
+    @extend .margin-top-small;
+    @extend .text-large;
+    color: getColor(snow);
+    color: getColor(night);
+    width: 100%;
+    border: 0;
+    font-family: 'roboto';
+    font-weight: 300;
+
+  }
 }
