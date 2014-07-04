@@ -1,23 +1,23 @@
 .busqueda-box{
-  @extend .padding-small;
-  @extend .text-center;
-  background-color: getColor(celeste);
-  .busqueda-titulo{
-    @extend .text-x-large;
-    color: getColor(snow);
-    font-family: 'robotolight';
-  }
-  .busqueda-campo{
-    @include border-radius(8px, 8px);
-    @extend .padding-xx-small;
-    @extend .margin-top-small;
-    @extend .text-large;
-    color: getColor(night);
-    width: 100%;
-    border: 0;
-    font-family: 'robotoregular';
-  }
-}
+   @extend .padding-small;
+   @extend .text-center;
+   background-color: getColor(celeste);
+   .busqueda-titulo{
+     @extend .text-x-large;
+     color: getColor(snow);
+     font-family: 'robotolight';
+   }
+   .busqueda-campo{
+     @include border-radius(8px, 8px);
+     @extend .padding-xx-small;
+     @extend .margin-top-small;
+     @extend .text-large;
+     color: getColor(night);
+     width: 100%;
+     border: 0;
+     font-family: 'robotoregular';
+   }
+ }
 
 .cliente-box{
   @extend .padding-small;
@@ -39,5 +39,35 @@
     @extend .margin-bottom-xx-small;
     color: getColor(night);
     font-family: 'robotoregular';
+  }
+}
+
+.accesorio-box{
+  border: 2px solid getColor(celeste);
+  margin: 0 getSpace(small) getSpace(x-small);
+  @extend .padding-x-small;
+
+  background-color:getColor(gris);
+
+  img{
+    width: 100%;
+    padding-right:getSpace(small);
+  }
+
+  .accesorio-titulo{
+    @extend .text-small;
+    @extend .margin-bottom-xx-small;
+    font-family: 'robotolight';
+    color: getColor(cobalto);
+  }
+
+  .accesorio-descripcion{
+    @extend .text-x-small;
+    font-family: 'robotolight';
+    @extend .margin-bottom-xx-small;
+    color: getColor(musgo);
+    .accesorio-referencia{
+      font-family: 'robotobold';
+    }
   }
 }

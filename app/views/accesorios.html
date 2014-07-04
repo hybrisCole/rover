@@ -15,3 +15,21 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="tatz-10">
+    <div class="accesorio-box" ng-repeat="accesorio in accesorios">
+      <div class="row">
+        <div class="tatz-3">
+          <img src="http://placehold.it/150x175" />
+        </div>
+        <div class="tatz-7">
+          <p class="accesorio-titulo">{{accesorio.nombre}} ({{accesorio.referencia}})</p>
+          <p class="accesorio-descripcion" ng-bind-html="accesorio.descripcion"></p>
+          <p class="accesorio-descripcion">
+            <span class="accesorio-referencia">Referencia:</span> {{accesorio.referencia}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
