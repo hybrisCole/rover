@@ -24,7 +24,7 @@
     
     <menuf></menuf>
 
-
+     <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
     <!-- build:js({.tmp,app}) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -37,10 +37,9 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/gmaps/gmaps.js"></script>
     <script src="bower_components/velocity/jquery.velocity.js"></script>
     <script src="bower_components/ng-slide-velocity/ng-slide-velocity.js"></script>
-    <script src="bower_components/jquery.scrollTo/jquery.scrollTo.js"></script>
-    <script src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -56,6 +55,8 @@
     <script src="scripts/directives/menup.js"></script>
     <script src="scripts/directives/menuf.js"></script>
     <script src="scripts/services/mailer.js"></script>
+    <script src="scripts/controllers/near.js"></script>
+    <script src="scripts/directives/gmaps.js"></script>
     <!-- endbuild -->
 </body>
 </html>

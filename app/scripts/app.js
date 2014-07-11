@@ -37,6 +37,10 @@ angular
         templateUrl: 'views/accesorios.html',
         controller: 'AccesoriosCtrl'
       })
+      .when('/near', {
+        templateUrl: 'views/near.html',
+        controller: 'NearCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

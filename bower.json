@@ -11,8 +11,8 @@
     "angular-animate": "1.2.18",
     "angular-touch": "1.2.18",
     "angular-route": "1.2.18",
-    "ng-slide-velocity": "0.0.4",
-    "jquery.scrollTo": "1.4.12"
+    "gmaps": "0.4.13",
+    "ng-slide-velocity": "0.0.4"
   },
   "devDependencies": {
     "angular-mocks": "1.2.18",

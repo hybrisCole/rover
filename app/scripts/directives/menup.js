@@ -8,11 +8,16 @@ angular.module('roverApp')
       link: function(scope){
 
       	var history  = [];
-
+        scope.home = false;
       	scope.$on('$routeChangeSuccess', function(){
       		if($location.path() !== history[history.length -1]){
       			history.push($location.path());
       		}
+          if($location.path() !== '/home'){
+            scope.home = true;
+          }else{
+            scope.home = false;
+          }
       	});
 
       	scope.back = function(){

@@ -1,0 +1,42 @@
+<div class="menuf row" ng-show="menu">
+	<div class="tatz-2 normal-btn" ng-click="goTo('/accesorios')">
+    <i class="fa fa-tachometer"></i>
+    <p>Accesorios</p>
+  </div>
+	<div class="tatz-2 normal-btn">
+    <i class="fa fa-history"></i>
+    <p>Historial</p>
+  </div>
+	<div class="tatz-2 red-alert" ng-click="openModal()">
+		<i class="fa fa-flag-o"></i>
+		<p>EMERGENCIA</p>
+	</div>
+	<div class="tatz-2 normal-btn">
+    <i class="fa fa-user"></i>
+    <p>Mi Perfil</p>
+  </div>
+	<div class="tatz-2 normal-btn" ng-click="goTo('/near')">
+    <i class="fa fa-map-marker"></i>
+    <p>Cerca de mi</p>
+  </div>
+</div>
+
+<div class="modal-emergency" ng-show="showEmer">
+  <div class="cont">
+    <i class="fa fa-times-circle fa-2x close" ng-click="openModal()"></i>
+    <div class="info">
+      <h1>Carloz Ramirez</h1>
+      <p>Lo cotactaremos en breve al numero: 88316452</p>
+      <p>Su Ubicaion es:</p>
+      <p ng-click="goTo('/near')">La uruca</p>
+      <textarea>
+      </textarea>
+      <div class="enviar-btn">
+        <p><i class="fa fa-envelope-o"></i>Enviar comentario</p>
+      </div>
+      <div class="llamar-agencia">
+        <p><i class="fa fa-phone"></i>Llamar a la agencia</p>
+      </div>
+    </div>
+  </div>
+</div>
