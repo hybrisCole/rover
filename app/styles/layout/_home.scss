@@ -1,7 +1,6 @@
 .home{
 	background: url(../../images/home_bg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  min-height : 1000px;  
+  -webkit-background-size: cover; 
 	.slide{
 		ul{
 			margin     : 0; 
@@ -21,16 +20,107 @@
 		height           : 100px; 
     background-color : rgba(255,255,255,0.3);
     padding-left     : 20px; 
-    padding-top      : 10px; 
+    padding-top      : 20px; 
     margin-top       : 50px; 
     font-family      : helvetica;
     p{
     	&:first-child{
-    		font-size : 24px; 
+    		font-size   : 24px; 
+        font-family : $robotobold; 
     	}
     	&:last-child{
-    		font-size : 44px; 
+    		font-size   : 40px; 
+        color       : getColor(cielo);
     	}
     } 
 	}
+  .ultima-rev{
+    padding-left : 20px;
+    .title{
+      font-family : $robotoregular;
+      padding   : 30px 0 10px 0;
+      font-size : 35px;   
+    }
+    .servicio{
+      li{
+        font-family : $robotoregular;
+        padding   : 5px 0;
+        font-size : 20px; 
+        p{
+          i{
+            color        : getColor(snow);
+            margin-right : 15px; 
+          }
+        } 
+      }
+    }
+  }
+  .fecha-kilo{
+    margin-top    : 20px;
+    margin-bottom : 20px; 
+    .tatz-5{
+      text-align : center; 
+      &:first-child{
+        border-right : 1px solid getColor(night);  
+      }
+      p{
+        &:first-child{
+          font-size   : 20px; 
+          font-family : $robotoregular; 
+        } 
+        &:nth-child(2){
+          font-family : $robotobold; 
+          font-size   : 15px;
+          margin-top  : 5px;  
+        }
+      }
+    } 
+  }
+  .reminders{
+    background-color : getColor(snow);
+    min-height       : 200px;  
+    padding-top      : 20px; 
+    padding-bottom   : 80px; 
+    .notice{
+      margin            : 0 auto;
+      height            : 170px;
+      background-color  : getColor(gris);   
+      width             : getPorcentual(nine);
+      border            : 2px solid getColor(celeste); 
+      .proxim{
+        text-align  : center;
+        font-family : $robotoregular;
+        margin-top  : 20px;
+        p{
+          font-size : 17px; 
+          i{
+            margin-left : 5px;
+            color       : getColor(cielo); 
+            margin-top  : -5px; 
+          }
+          &:nth-child(2){
+            margin-left : -6px; 
+            font-size   : 12px;
+            margin-top  : 5px;
+            color : getColor(musgo);
+            i{
+              margin-right : 5px; 
+              color        : getColor(musgo); 
+            }  
+          }
+        }  
+        .btn-agendar{
+          border        : solid 2px getColor(cielo);
+          color         : getColor(cielo);  
+          width         : getPorcentual(nine);  
+          margin        : 30px auto 0 auto; 
+          padding       : 15px; 
+          border-radius : 8px;
+          p{
+            font-size : 25px; 
+          }
+        } 
+      }
+    }
+  }
 }

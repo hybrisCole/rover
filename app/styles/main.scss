@@ -38,13 +38,112 @@ body {
       width   : 140px;
       margin  : 0 auto;
       img{
-        width   : 100%;
+        width   : getPorcentual(ten);
       }
     }
   }
   .back{
-    margin: -35px 20px;
+    margin : -40px 20px;
+    color  : getColor(cobalto);
   }
+}
+
+.menuf{
+  position    : fixed;
+  left        : 0;
+  bottom      : 0;
+  height      : 60px;
+  width       : getPorcentual(ten);
+  text-align  : center;
+  font-family : 'robotoregular';
+  p{  
+    font-size   : 12px; 
+  }
+  i{
+    margin : 7px 0 5px 0; 
+  }
+  .red-alert{
+    height     : 60px;
+    background : getColor(rojo);
+    color      : getColor(snow);
+    p{
+      font-size  : 9px; 
+    }
+    i{
+      margin : 10px 0 10px 0; 
+    }
+  }
+  .normal-btn{
+    height     : 50px;
+    background : getColor(gris);
+    margin-top : 10px; 
+    border-top : 1px solid getColor(cobalto); 
+    color      : getColor(cobalto);
+  }
+}
+
+.modal-emergency{
+  width            : getPorcentual(ten);
+  height           : getPorcentual(ten);
+  background-color : rgba(255,255,255,0.7);
+  position         : fixed;
+  z-index          : 100;
+  .cont{
+    border           : 2px solid getColor(cielo);
+    background-color : getColor(gris);  
+    width            : getPorcentual(nine);
+    margin           : 0 auto;  
+    margin-top       : getPorcentual(one); 
+    min-height       : 400px; 
+    .close{
+      top      : -11px;
+      right    : -8px;
+      float    : right;
+      position : relative;
+      color    : getColor(musgo); 
+    }
+    .info{
+      width       : getPorcentual(nine);
+      margin      : 0 auto;  
+      font-family : $robotoregular;
+      padding-top : 20px;
+      h1{
+        font-size : 25px; 
+      }
+      textarea{
+        width      : getPorcentual(ten);
+        height     : 120px; 
+        max-width  : getPorcentual(ten);
+        max-height : 120px; 
+        border     : 2px solid getColor(cielo); 
+        margin-top : 15px; 
+      }
+      .enviar-btn{
+        width         : getPorcentual(ten);
+        padding       : 10px;
+        text-align    : center;  
+        border        : 2px solid getColor(rojo); 
+        border-radius : 8px;
+        color         : getColor(rojo); 
+        margin-top    : 10px; 
+        i{
+          margin-right : 5px; 
+        }
+      }
+      .llamar-agencia{
+        width         : getPorcentual(ten);
+        padding       : 10px;
+        text-align    : center; 
+        border        : 2px solid #21B356;
+        border-radius : 8px; 
+        color         : #21B356;
+        margin-top   : 10px; 
+        i{
+          margin-right : 5px; 
+        }
+      }
+    }
+  }    
 }
 
 /* Responsive: Portrait tablets and up */
@@ -74,9 +173,9 @@ p,div{
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   margin-top : 60px;
-  overflow-x : hidden;
+  overflow: hidden;
 }
 
 .next-animation{
