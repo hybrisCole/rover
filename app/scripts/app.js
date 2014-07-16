@@ -48,11 +48,11 @@ angular
     
     $rootScope.menu = false;
     
-    $rootScope.$on('$locationChangeStart',function () {
+    $rootScope.$on('$routeChangeSuccess',function () {
       if($location.path() !== '/'){
         $timeout(function() {
           $rootScope.menu = true;
-        }, 500);
+        }, 300);
       }else{
         $rootScope.menu = false;
       }

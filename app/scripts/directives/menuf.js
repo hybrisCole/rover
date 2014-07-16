@@ -18,8 +18,7 @@ angular.module('roverApp')
       		}else{
       			scope.showEmer = false;
       		}
-      	}
-        
+      	};   
       }
     };
   });

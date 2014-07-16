@@ -18,11 +18,11 @@
   <body ng-app="roverApp" ng-controller="MotherCtrl">
 
     <!-- Add your site or application content here -->
-    <menup></menup>
+    <menup ng-show="menu" back="goBack(path)"></menup>
 
     <div ng-view="" ng-class="viewAnimation" class="rover-container"></div>
     
-    <menuf></menuf>
+    <menuf ng-show="menu"></menuf>
 
      <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
     <!-- build:js({.tmp,app}) scripts/vendor.js -->
@@ -38,6 +38,7 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/gmaps/gmaps.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/velocity/jquery.velocity.js"></script>
     <script src="bower_components/ng-slide-velocity/ng-slide-velocity.js"></script>
     <!-- endbower -->

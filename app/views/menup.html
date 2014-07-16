@@ -1,12 +1,12 @@
-<div class="header row" ng-show="menu">
+<div class="header row">
   <div class="tatz-10 cont row">
-  	<div class="home-ico pull-left" ng-click="goBack('/home')" ng-show="home">
+  	<div class="home-ico pull-left" ng-click="back({path:'/home'})" ng-show="home">
       <i class="fa fa-home fa-lg"></i>
     </div>
     <div class="logo-head">
       <img src="images/mainlogo.png" alt="main logo">
     </div>
-    <div class="back pull-right" ng-click="back()" ng-show="home">
+    <div class="back pull-right" ng-click="back({path:goback})" ng-show="home">
       <i class="fa fa-reply fa-lg"></i>
     </div>
   </div>
