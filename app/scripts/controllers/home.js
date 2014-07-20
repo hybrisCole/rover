@@ -8,18 +8,5 @@
  * Controller of the roverApp
  */
 angular.module('roverApp')
-  .controller('HomeCtrl', function ($scope) {
-    $scope.carousel = [
-    	{img : 'http://placekitten.com/150/150'},
-    	{img : 'http://placekitten.com/150/150'},
-      {img : 'http://placekitten.com/150/150'},
-      {img : 'http://placekitten.com/150/150'},
-      {img : 'http://placekitten.com/150/150'},
-      {img : 'http://placekitten.com/150/150'},
-      {img : 'http://placekitten.com/150/150'},
-      {img : 'http://placekitten.com/150/150'},
-      {img : 'http://placekitten.com/150/150'},
-      {img : 'http://placekitten.com/150/150'},
-      {img : 'http://placekitten.com/150/150'}
-    ];
-  });
+  .controller('HomeCtrl', function () {
+});

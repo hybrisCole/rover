@@ -1,43 +1,34 @@
 <div class="home">
   <div class="wrapper">
-	 <carousel imgs="carousel"></carousel>
+	 <carousel go="goTo(path)"></carousel>
   </div>
   <div class="welcome row">
     <p>Bienvenido</p>
-    <p>Carlos Ramirez</p>
+    <p>{{nombre}}</p>
   </div>
   <div class="ultima-rev">
     <p class="title">Útima Revisión</p>
     <ul class="servicio">
-      <li>
-        <p><i class="fa fa-arrow-right"></i>Ajuste de frenos</p>
-      </li>
-      <li>
-        <p><i class="fa fa-arrow-right"></i>Cambio de aceite</p>
-      </li>
-      <li>
-        <p><i class="fa fa-arrow-right"></i>Cambio de fibras</p>
-      </li>
-      <li>
-        <p><i class="fa fa-arrow-right"></i>Lavado y Encerado</p>
+      <li ng-repeat="servicio in ultimaRev.listado">
+        <p><i class="fa fa-arrow-right"></i>{{servicio}}</p>
       </li>
     </ul>
   </div>
   <div class="row fecha-kilo">
     <div class="tatz-5">
-      <p>13 Agosto 2014</p>
+      <p>{{ultimaFecha}}</p>
       <p>Fecha revisión</p>
     </div>
     <div class="tatz-5">
-      <p>10.500 Kms</p>
+      <p>{{user.kmUltimaRev}} Kms</p>
       <p>Kilometraje</p>
     </div>
   </div>
     <div class="reminders tazt-10">
       <div class="notice">
         <div class="proxim">
-          <p>Próxima revisión 11.500Kms<i class="fa fa-plus-circle fa-lg"></i></p>
-          <p><i class="fa fa-clock-o"></i>Fecha apróxima: 20 de Diciembre 2014</p>
+          <p>Próxima revisión {{user.kmProximaRev}}Kms<i class="fa fa-plus-circle fa-lg"></i></p>
+          <p><i class="fa fa-clock-o"></i>Fecha apróxima: {{proximaFecha}}</p>
           <div class="btn-agendar">
             <p>Agendar Revisión</p>
           </div>

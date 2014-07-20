@@ -29,10 +29,6 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .when('/vista3', {
-        templateUrl: 'views/vista3.html',
-        controller: 'Vista3Ctrl'
-      })
       .when('/accesorios', {
         templateUrl: 'views/accesorios.html',
         controller: 'AccesoriosCtrl'
@@ -41,14 +37,27 @@ angular
         templateUrl: 'views/near.html',
         controller: 'NearCtrl'
       })
+      .when('/historial', {
+        templateUrl: 'views/historial.html',
+        controller: 'HistorialCtrl'
+      })
+      .when('/perfil', {
+        templateUrl: 'views/perfil.html',
+        controller: 'PerfilCtrl'
+      })
+      .when('/accesorio/:id', {
+        templateUrl: 'views/accesorio.html',
+        controller: 'AccesorioCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
-  }).run(function($rootScope, $location, $timeout){
+  }).run(function($rootScope,$location,$timeout,$cookieStore,vin){
     
     $rootScope.menu = false;
-    
-    $rootScope.$on('$routeChangeSuccess',function () {
+
+    $rootScope.$on('$routeChangeSuccess',function(){
+      
       if($location.path() !== '/'){
         $timeout(function() {
           $rootScope.menu = true;
@@ -56,5 +65,16 @@ angular
       }else{
         $rootScope.menu = false;
       }
+
+      if(!_.isUndefined($cookieStore.get('vinNum')) && $location.path() === '/'){
+        vin.getUser($cookieStore.get('vinNum')).then(function(data){
+          if(!_.isEmpty(data)){
+            $location.path('/home');
+          }else{
+            console.log('lo sentimos el vin no existe');
+          }
+        });
+      }
+
     });
   });

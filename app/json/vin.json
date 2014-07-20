@@ -1,0 +1,95 @@
+[
+  {
+    "vin": "SALLMAMC36A207921",
+    "nombre":"Gioconda Nieto Odio", 
+    "modelo":"discovery",
+    "year":"2010",
+    "combustible": "gasolina",
+    "cilindraje": "2800",
+    "motor":"V6",
+    "kmUltimaRev":"10.000",
+    "fechaUltimaRev":"2014-04-25T01:32:21.196Z",
+    "kmProximaRev":"20.000",
+    "fechaProximaRev":"2014-09-25T01:32:21.196Z",
+    "historial":[
+      {
+        "fecha": "2014-04-25T01:32:21.196Z",
+        "km":"10.000",
+        "listado": [
+          "cambio de pastillas",
+          "cambio de aceite",
+          "ajuste de clutch"
+        ]
+      },
+      {
+        "fecha": "2014-01-25T01:32:21.196Z",
+        "km":"5.000",
+        "listado": [
+          "cambio de pastillas",
+          "cambio de aceite",
+          "ajuste de clutch"
+        ]
+      }
+    ]
+  },
+  {
+    "vin": "SALLMAMC36A207922",
+    "nombre":"Alberto Cole Palacios", 
+    "modelo":"Range Rover Evoque",
+    "year":"2010",
+    "combustible": "gasolina",
+    "cilindraje": "2800",
+    "motor":"V6",
+    "kmUltimaRev":"10.000",
+    "fechaUltimaRev":"2014-04-25T01:32:21.196Z",
+    "kmProximaRev":"20.000",
+    "fechaProximaRev":"2014-09-25T01:32:21.196Z",
+    "historial":[
+      {
+        "fecha": "2014-04-25T01:32:21.196Z",
+        "km":"10.000",
+        "listado": [
+          "cambio de pastillas",
+          "cambio de aceite",
+          "ajuste de clutch"
+        ]
+      },
+      {
+        "fecha": "2014-01-25T01:32:21.196Z",
+        "km":"5.000",
+        "listado": [
+          "cambio de pastillas",
+          "cambio de aceite",
+          "ajuste de clutch"
+        ]
+      },
+      {
+        "fecha": "2013-12-25T01:32:21.196Z",
+        "km":"5.000",
+        "listado": [
+          "cambio de pastillas",
+          "cambio de aceite",
+          "ajuste de clutch"
+        ]
+      },
+      {
+        "fecha": "2013-10-25T01:32:21.196Z",
+        "km":"5.000",
+        "listado": [
+          "cambio de pastillas",
+          "cambio de aceite",
+          "ajuste de clutch"
+        ]
+      },
+      {
+        "fecha": "2013-06-25T01:32:21.196Z",
+        "km":"5.000",
+        "listado": [
+          "cambio de pastillas",
+          "cambio de aceite",
+          "ajuste de clutch"
+        ]
+      }
+    ]
+  }
+]

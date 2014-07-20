@@ -23,6 +23,7 @@
     "$":false,
     "GMaps":false,
     "google":false,
-    "_":false
+    "_":false,
+    "moment":false
   }
 }

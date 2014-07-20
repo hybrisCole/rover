@@ -2,31 +2,32 @@
   <div class="tatz-10">
     <div class="busqueda-box">
       <p class="busqueda-titulo">Partes y Accessorios</p>
-      <input placeholder="Buscar" type="text" class="busqueda-campo" />
+      <input placeholder="Buscar" type="text" class="busqueda-campo" ng-model="search.nombre"/>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="tatz-10">
     <div class="cliente-box">
-      <p class="cliente-nombre">Carlos Ramirez</p>
-      <p class="cliente-auto">Range Rover Evoque</p>
-      <p class="cliente-vin">VIN# 12334345345</p>
+      <p class="cliente-nombre">{{nombre}}</p>
+      <p class="cliente-auto">{{user.modelo}}</p>
+      <p class="cliente-vin">VIN# {{user.vin}}</p>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="tatz-10">
-    <div class="accesorio-box" ng-repeat="accesorio in accesorios">
+    <div class="accesorio-box" ng-repeat="accesorio in accesorios.accesorios | filter:search:strict">
       <div class="row">
-        <div class="tatz-3">
-          <img src="http://placehold.it/150x175" />
+        <div class="tatz-4">
+          <img ng-src="images/accesorios/{{accesorios.modelo}}/{{accesorio.img}}" width="150"/>
         </div>
-        <div class="tatz-7">
-          <p class="accesorio-titulo">{{accesorio.nombre}} ({{accesorio.referencia}})</p>
+        <div class="tatz-6">
+          <p class="accesorio-titulo">{{accesorio.accesorio}}</p>
           <p class="accesorio-descripcion" ng-bind-html="accesorio.descripcion"></p>
           <p class="accesorio-descripcion">
-            <span class="accesorio-referencia">Referencia:</span> {{accesorio.referencia}}</p>
+            <span class="accesorio-referencia">Referencia:</span> {{accesorio.codigo}}
+          </p>
         </div>
       </div>
     </div>

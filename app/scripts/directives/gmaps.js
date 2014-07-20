@@ -7,7 +7,7 @@ angular.module('roverApp')
       link: function (scope, element, attrs){
       	
         element.width($window.innerWidth);
-      	element.height($window.innerHeight);
+      	element.height($window.innerHeight - 110);
         
         var map = new GMaps({
   			  div : '#'+attrs.id,
@@ -17,10 +17,10 @@ angular.module('roverApp')
         
         map.map.setOptions({'scrollwheel': false});
         
-        navigator.geolocation.getCurrentPosition(function(position){
+        var positionTimer = navigator.geolocation.watchPosition(function(position){
 
           var markerObj = [{lat:9.946114,lng:-84.088296},{lat:position.coords.latitude,lng:position.coords.longitude}];
-          
+
           map.addMarkers([{
             lat   : 9.946114,
             lng   : -84.088296,
@@ -47,7 +47,21 @@ angular.module('roverApp')
             strokeOpacity : 1,
             strokeWeight  : 5
           });
+
+          map.getRoutes({
+            origin: [position.coords.latitude, position.coords.longitude],
+            destination: [9.946114, -84.088296],
+            travelMode    : 'driving',
+            callback: function (e) {
+              console.log(e);
+            }
+          });
         });
+
+        scope.$on('$locationChangeStart', function (){
+          navigator.geolocation.clearWatch(positionTimer);
+        });
+
       }
     };
   });

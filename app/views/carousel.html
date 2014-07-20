@@ -1,7 +1,10 @@
 <div class="slide">
 	<ul ng-swipe-left="left()" ng-swipe-right="right()" id="skroll"> 
-		<li ng-repeat="img in imgs" id="next-{{$index}}">
-			<a href="#/accesorios"><img ng-src="{{img.img}}" alt=""></a>
+		<li ng-repeat="img in accesorios.accesorios" id="next-{{$index}}" >
+			<a ng-click="go({path:'/accesorio/{{img.codigo}}'})">
+				<img ng-src="images/accesorios/{{accesorios.modelo}}/{{img.img}}" alt="" width="150">
+				<p>{{img.accesorio}}</p>
+			</a>
 		</li>
 	</ul>
 </div>

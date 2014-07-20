@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('roverApp')
-  .directive('carousel', function ($window) {
+  .directive('carousel', function ($window,$cookieStore,vin) {
     return {
       templateUrl : 'views/carousel.html',
       restrict    : 'E',
       scope : {
-      	imgs : '='
+        go : '&'
       },
       link: function(scope, element){
         var move = 0;
@@ -28,6 +28,15 @@ angular.module('roverApp')
           }
         	element.find('#skroll li').first().velocity({marginLeft : move+'px'}, 1000, 'swing');
         };
+
+        var vinNum = $cookieStore.get('vinNum');
+
+        vin.getUser(vinNum).then(function(user){
+          var model = user[0].modelo.replace(/\s/g, '').toLowerCase();
+          vin.getAcsry(model).then(function(data){
+            scope.accesorios = data;
+          });
+        });
       }
     };
   });

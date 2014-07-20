@@ -84,6 +84,10 @@ body {
     border-top : 1px solid getColor(cobalto); 
     color      : getColor(cobalto);
   }
+  .current{
+    color      : getColor(gris);
+    background : getColor(cobalto);
+  }
 }
 
 .modal-emergency{
@@ -179,6 +183,7 @@ p,div{
   width: 100%;
   height: auto;
   margin-top : 60px;
+  margin-bottom:50px; 
   overflow: hidden;
 }
 

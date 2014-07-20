@@ -14,16 +14,18 @@ angular.module('roverApp')
         scope.home   = false;
       	
         scope.$on('$routeChangeSuccess', function(){
-      		
-          if($location.path() !== history[history.length -1]){
+          if($location.path() !== history[history.length -1] && !_.contains(history, $location.path())){
       			history.push($location.path());
       		}
-          
+
           if($location.path() !== '/home'){
             scope.home = true;
           }else{
             scope.home = false;
           }
+
+          scope.goback = history[history.length - 2];
+
       	});
 
         scope.$on('goBack', function(){
@@ -31,7 +33,6 @@ angular.module('roverApp')
             history.pop();
           }
           scope.goback = history[history.length - 1];
-          console.log(history[history.length - 1]);
         });
       }
     };

@@ -1,0 +1,65 @@
+[{
+  "modelo":"rangeroverevoque",
+  "accesorios":[
+    {
+      "accesorio":"Faldones delanteros",
+      "codigo":"vplvp0065",
+      "img":"vplvp0065.jpg",
+      "desc":"descripcion"
+    },
+    {
+      "accesorio":"Faldones Traseros",
+      "codigo":"vplvp0069",
+      "img":"vplvp0069.jpg",
+      "desc":"descripcion"
+    },
+    {
+      "accesorio":"Alfombra de Carga",
+      "codigo":"vplvs0091",
+      "img":"vplvs0091.jpg",
+      "desc":"descripcion"
+    },
+    {
+      "accesorio":"Porta Bicicleta",
+      "codigo":"lr006847",
+      "img":"lr006847.jpg",
+      "desc":"descripcion"
+    },
+    {
+      "accesorio":"Instalacion eléctrica para remolque",
+      "codigo":"vplht0061",
+      "img":"vplht0061.jpg",
+      "desc":"descripcion"
+    },
+    {
+      "accesorio":"Remolque",
+      "codigo":"vplvy0061",
+      "img":"vplvr0073.jpg",
+      "desc":"descripcion"
+    },
+    {
+      "accesorio":"Barras de Techo Cruzadas",
+      "codigo":"vplvr0073",
+      "img":"vplvr0073.jpg",
+      "desc":"descripcion"
+    },
+    {
+      "accesorio":"Rieles de Techo",
+      "codigo":"vplvr0086",
+      "img":"vplvr0086.jpg",
+      "desc":"descripcion"
+    },
+    {
+      "accesorio":"Adaptador de 13 a 7 pines",
+      "codigo":"vplvt0064",
+      "img":"vplvt0064.jpg",
+      "desc":"descripcion"
+    },
+    {
+      "accesorio":"Remolque",
+      "codigo":"vplvt0102",
+      "img":"vplvt0102.jpg",
+      "desc":"descripcion"
+    }
+  ]
+}]

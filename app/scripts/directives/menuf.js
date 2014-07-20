@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('roverApp')
-  .directive('menuf', function (mailer) {
+  .directive('menuf', function (mailer,$location) {
     return {
       templateUrl: 'views/menuf.html',
       restrict: 'E',
@@ -19,6 +19,13 @@ angular.module('roverApp')
       			scope.showEmer = false;
       		}
       	};   
+
+        scope.$on('$routeChangeSuccess', function(){
+          var path = $location.path();
+          var pathClass = path.substr(1);
+          angular.element('.menuf .normal-btn').removeClass('current');
+          angular.element('.menuf').find('.'+pathClass).addClass('current');
+        });
       }
     };
   });

@@ -14,11 +14,11 @@
 				<img src="images/lock.svg" alt="" width="40">
 			</div>
 			<div class="tatz-8 left">
-				<input type="text" class="vin" name="vin" placeholder="Número de VIN">
+				<input type="text" class="vin" name="vin" placeholder="Número de VIN" ng-model='vin'>
 			</div>
 		</div>
 		<div class="row">
-			<a href="#/home">
+			<a ng-click="sendVin()">
 				<div class="btn">
 					<p>Ingresar</p>
 				</div>
