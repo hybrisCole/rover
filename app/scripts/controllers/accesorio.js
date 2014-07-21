@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('roverApp')
-  .controller('AccesorioCtrl', function ($scope,$cookieStore,$routeParams,vin) {
+  .controller('AccesorioCtrl', function ($scope,$cookieStore,$routeParams,$location,vin) {
     var vinNum = $cookieStore.get('vinNum');
     var codigo = $routeParams.id;
     vin.getUser(vinNum).then(function(user){
@@ -11,7 +11,22 @@ angular.module('roverApp')
         $scope.modelo = data.modelo;
         $scope.accesorio = acce[0];
         var currentIndex = _.indexOf(data.accesorios, acce[0]);
-        console.log(data.accesorios[currentIndex]);
+        $scope.left = function(){
+        	currentIndex = currentIndex - 1;
+        	if(currentIndex < 0){
+        		currentIndex = 0;
+        	}
+        	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
+        }
+
+        $scope.right = function(){
+        	currentIndex = currentIndex + 1;
+        	if(currentIndex > data.accesorios.length){
+        		currentIndex = data.accesorios.length;
+        	}
+        	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
+        }
+
       });
     });
   });

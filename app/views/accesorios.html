@@ -2,7 +2,7 @@
   <div class="tatz-10">
     <div class="busqueda-box">
       <p class="busqueda-titulo">Partes y Accessorios</p>
-      <input placeholder="Buscar" type="text" class="busqueda-campo" ng-model="search.nombre"/>
+      <input placeholder="Buscar" type="text" class="busqueda-campo" ng-model="searchText"/>
     </div>
   </div>
 </div>
@@ -17,7 +17,7 @@
 </div>
 <div class="row">
   <div class="tatz-10">
-    <div class="accesorio-box" ng-repeat="accesorio in accesorios.accesorios | filter:search:strict">
+    <div class="accesorio-box" ng-repeat="accesorio in accesorios.accesorios | filter:searchText" ng-click="goTo('/accesorio/{{accesorio.codigo}}')">
       <div class="row">
         <div class="tatz-4">
           <img ng-src="images/accesorios/{{accesorios.modelo}}/{{accesorio.img}}" width="150"/>
