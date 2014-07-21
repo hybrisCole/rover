@@ -16,14 +16,16 @@ angular.module('roverApp')
         	currentIndex = currentIndex - 1;
         	if(currentIndex < 0){
         		currentIndex = 0;
+        		navigator.vibrate(1000);
         	}
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
         };
 
         $scope.right = function(){
         	currentIndex = currentIndex + 1;
-        	if(currentIndex > data.accesorios.length){
-        		currentIndex = data.accesorios.length;
+        	if(currentIndex > data.accesorios.length - 1){
+        		currentIndex = data.accesorios.length - 1;
+        		navigator.vibrate(1000);
         	}
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
         };
