@@ -17,6 +17,16 @@
      border: 0;
      font-family: 'robotoregular';
    }
+    .comentarios-campo{
+      @include border-radius(8px, 8px);
+      @extend .padding-xx-small;
+      @extend .margin-top-small;
+      @extend .text-medium;
+      color: getColor(night);
+      width: 100%;
+      border: 0;
+      font-family: 'robotoregular';
+    }
  }
 
 .cliente-box{
