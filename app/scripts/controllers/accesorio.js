@@ -11,13 +11,14 @@ angular.module('roverApp')
         $scope.modelo = data.modelo;
         $scope.accesorio = acce[0];
         var currentIndex = _.indexOf(data.accesorios, acce[0]);
+        
         $scope.left = function(){
         	currentIndex = currentIndex - 1;
         	if(currentIndex < 0){
         		currentIndex = 0;
         	}
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
-        }
+        };
 
         $scope.right = function(){
         	currentIndex = currentIndex + 1;
@@ -25,7 +26,7 @@ angular.module('roverApp')
         		currentIndex = data.accesorios.length;
         	}
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
-        }
+        };
 
       });
     });
