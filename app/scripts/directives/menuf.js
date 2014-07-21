@@ -23,6 +23,7 @@ angular.module('roverApp')
             navigator.geolocation.getCurrentPosition(function(position){
               geocode.getAddress(position.coords.latitude, position.coords.longitude).then(function(data){
                 scope.ubicacion = data.results[0].formatted_address;
+                scope.latLng = [position.coords.latitude, position.coords.longitude];
               });
             });
       		}else{
@@ -31,11 +32,18 @@ angular.module('roverApp')
       	};   
 
         scope.sendMail = function(){
-          mailer.submitForm().then(function(data){
+          var obj = {
+            'subj' : 'EMERGENCIA APP',
+            'type' : 'E',
+            'ubicacion' : scope.ubicacion,
+            'cords'     : scope.latLng
+          };
+
+          mailer.submitForm(obj).then(function(data){
             console.log(data);
           });
         };
-
+      
         scope.$on('$routeChangeSuccess', function(){
           var path = $location.path();
           var pathClass = path.substr(1);
