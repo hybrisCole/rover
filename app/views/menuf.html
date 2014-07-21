@@ -25,14 +25,12 @@
   <div class="cont">
     <i class="fa fa-times-circle fa-2x close" ng-click="openModal()"></i>
     <div class="info">
-      <h1>Carloz Ramirez</h1>
-      <p>Lo cotactaremos en breve al numero: 88316452</p>
-      <p>Su Ubicaion es:</p>
-      <p ng-click="goTo('/near')">La uruca</p>
+      <h1>Emergencias Motores Britanicos</h1>
+      <p>Su ubicación es: <span ng-click="goTo('/near')">{{ubicacion}}.</span></p>
       <textarea>
       </textarea>
-      <div class="enviar-btn">
-        <p><i class="fa fa-envelope-o"></i>Enviar comentario</p>
+      <div class="enviar-btn" ng-click="sendMail()">
+        <p><i class="fa fa-envelope-o"></i>Pedir Ayuda!</p>
       </div>
       <div class="llamar-agencia">
         <p><i class="fa fa-phone"></i>Llamar a la agencia</p>

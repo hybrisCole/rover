@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('roverApp')
-  .directive('menuf', function (mailer,$location) {
+  .directive('menuf', function (mailer,$location,geocode) {
     return {
       templateUrl: 'views/menuf.html',
       restrict: 'E',
@@ -19,13 +19,21 @@ angular.module('roverApp')
       	scope.openModal = function(){
       		if(!scope.showEmer){
       			scope.showEmer = true;
-      			mailer.submitForm().then(function(data){
-      				console.log(data);
-      			});
+            navigator.geolocation.getCurrentPosition(function(position){
+              geocode.getAddress(position.coords.latitude, position.coords.longitude).then(function(data){
+                scope.ubicacion = data.results[0].formatted_address;
+              });
+            });
       		}else{
       			scope.showEmer = false;
       		}
       	};   
+
+        scope.sendMail = function(){
+          mailer.submitForm().then(function(data){
+            console.log(data);
+          });
+        };
 
         scope.$on('$routeChangeSuccess', function(){
           var path = $location.path();
