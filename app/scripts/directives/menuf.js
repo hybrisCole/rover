@@ -17,6 +17,7 @@ angular.module('roverApp')
         ];
 
       	scope.openModal = function(){
+          /* jshint camelcase: false*/
       		if(!scope.showEmer){
       			scope.showEmer = true;
             navigator.geolocation.getCurrentPosition(function(position){
