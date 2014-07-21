@@ -17,7 +17,7 @@ angular.module('roverApp')
           if(element.find('#skroll li').last().position().left < angular.element($window).width()){
             move = (move + (angular.element($window).width() - element.find('#skroll li').last().position().left)) + 20;
           }
-        	element.find('#skroll li').first().velocity({marginLeft : move+'px'}, 1000, 'swing');
+        	element.find('#skroll li').first().velocity({marginLeft : move+'px'}, 300, 'swing');
         };
 
         scope.right = function(){
@@ -26,7 +26,7 @@ angular.module('roverApp')
           if(move > 0){
             move = 0;
           }
-        	element.find('#skroll li').first().velocity({marginLeft : move+'px'}, 1000, 'swing');
+        	element.find('#skroll li').first().velocity({marginLeft : move+'px'}, 300, 'swing');
         };
 
         var vinNum = $cookieStore.get('vinNum');

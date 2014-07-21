@@ -10,6 +10,8 @@ angular.module('roverApp')
         var acce = _.where(data.accesorios,{ 'codigo': codigo});
         $scope.modelo = data.modelo;
         $scope.accesorio = acce[0];
+        var currentIndex = _.indexOf(data.accesorios, acce[0]);
+        console.log(data.accesorios[currentIndex]);
       });
     });
   });
