@@ -126,31 +126,34 @@ body {
         border     : 2px solid getColor(cielo);
         margin-top : 15px;
       }
-      .enviar-btn{
-        width         : getPorcentual(ten);
-        padding       : 10px;
-        text-align    : center;
-        border        : 2px solid getColor(rojo);
-        border-radius : 8px;
-        color         : getColor(rojo);
-        margin-top    : 10px;
-        i{
-          margin-right : 5px;
-        }
-      }
-      .llamar-agencia{
-        width         : getPorcentual(ten);
-        padding       : 10px;
-        text-align    : center;
-        border        : 2px solid #21B356;
-        border-radius : 8px;
-        color         : #21B356;
-        margin-top   : 10px;
-        i{
-          margin-right : 5px;
-        }
-      }
     }
+  }
+}
+
+.enviar-btn{
+  font-family: "robotoregular";
+  width         : getPorcentual(ten);
+  padding       : 10px;
+  text-align    : center;
+  border        : 2px solid getColor(rojo);
+  border-radius : 8px;
+  color         : getColor(rojo);
+  margin-top    : 10px;
+  i{
+    margin-right : 5px;
+  }
+}
+.llamar-agencia{
+  font-family: "robotoregular";
+  width         : getPorcentual(ten);
+  padding       : 10px;
+  text-align    : center;
+  border        : 2px solid #21B356;
+  border-radius : 8px;
+  color         : #21B356;
+  margin-top   : 10px;
+  i{
+    margin-right : 5px;
   }
 }
 
