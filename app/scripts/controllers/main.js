@@ -19,9 +19,11 @@ angular.module('roverApp')
             $scope.viewAnimation = 'slide-velocity-next';
             $location.path('/home');
           }else{
-            console.log('lo sentimos el vin no existe');
+            $scope.errorVin = 'Su VIN no se encuentra registrado';
           }
         });
+      }else{
+        $scope.errorVin = 'Ingrese su VIN';
       }
     };
 
