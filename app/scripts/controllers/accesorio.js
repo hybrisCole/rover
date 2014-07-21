@@ -2,8 +2,9 @@
 
 angular.module('roverApp')
   .controller('AccesorioCtrl', function ($scope,$cookieStore,$routeParams,$location,vin) {
-    var vinNum = $cookieStore.get('vinNum');
-    var codigo = $routeParams.id;
+    var vinNum  = $cookieStore.get('vinNum');
+    var codigo  = $routeParams.id;
+    var vibrate = navigator.vibrate || navigator.webkitVibrate;
     vin.getUser(vinNum).then(function(user){
       var model = user[0].modelo.replace(/\s/g, '').toLowerCase();
       vin.getAcsry(model).then(function(data){
@@ -16,7 +17,7 @@ angular.module('roverApp')
         	currentIndex = currentIndex - 1;
         	if(currentIndex < 0){
         		currentIndex = 0;
-        		navigator.vibrate(1000);
+        		vibrate(1000);
         	}
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
         };
@@ -25,7 +26,8 @@ angular.module('roverApp')
         	currentIndex = currentIndex + 1;
         	if(currentIndex > data.accesorios.length - 1){
         		currentIndex = data.accesorios.length - 1;
-        		navigator.vibrate(1000);
+        		var supportsVibrate = "vibrate" in navigator;
+        		vibrate(1000);
         	}
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
         };
