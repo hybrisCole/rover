@@ -9,6 +9,13 @@ angular.module('roverApp')
 
       	scope.showEmer = false;
 
+        var routes = [
+          '/accesorios',
+          '/historial',
+          '/near',
+          '/perfil'
+        ];
+
       	scope.openModal = function(){
       		if(!scope.showEmer){
       			scope.showEmer = true;
@@ -23,8 +30,10 @@ angular.module('roverApp')
         scope.$on('$routeChangeSuccess', function(){
           var path = $location.path();
           var pathClass = path.substr(1);
-          angular.element('.menuf .normal-btn').removeClass('current');
-          angular.element('.menuf').find('.'+pathClass).addClass('current');
+          if(_.contains(routes,path)){
+            angular.element('.menuf .normal-btn').removeClass('current');
+            angular.element('.menuf').find('.'+pathClass).addClass('current');
+          }
         });
       }
     };
