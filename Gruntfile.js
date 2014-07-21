@@ -341,7 +341,7 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
-            'images/{,*/}*.{webp,mp4}',
+            'images/**/*',
             'fonts/{,*/}*',
             'json/{,*/}*'
           ]
@@ -426,7 +426,6 @@ module.exports = function (grunt) {
     'copy:dist',
     'cssmin',
     'uglify',
-    'filerev',
     'usemin',
     'htmlmin'
   ]);
