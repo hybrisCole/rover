@@ -4,8 +4,20 @@ angular.module('roverApp')
   .controller('MotherCtrl', function($scope,$rootScope,$location,$cookieStore,vin){
     
     $rootScope.menu = false;
-    
-    var vinNum = $cookieStore.get('vinNum');
+    var vinNum = '';
+    $rootScope.$on('$routeChangeSuccess',function(){
+      if(!_.isUndefined($cookieStore.get('vinNum'))){
+        vinNum = $cookieStore.get('vinNum');
+        vin.getUser(vinNum).then(function(user){
+          $scope.user = user[0];
+          $scope.nombre = user[0].nombre.split(' ').slice(0,2).join(' ');
+          var ultimaRev = _.where($scope.user.historial,{'fecha':$scope.user.fechaUltimaRev});
+          $scope.ultimaRev = ultimaRev[0];
+          $scope.ultimaFecha  = moment($scope.user.fechaUltimaRev).format('DD MMMM YYYY');
+          $scope.proximaFecha = moment($scope.user.fechaProximaRev).format('DD MMMM YYYY');
+        });
+      }
+    });
     
     $scope.viewAnimation = 'slide-velocity-next';
     $scope.goTo = function(location){
@@ -18,14 +30,4 @@ angular.module('roverApp')
       $location.path(location);
       $rootScope.$broadcast('goBack');
     };
-
-    vin.getUser(vinNum).then(function(user){
-      $scope.user = user[0];
-      $scope.nombre = user[0].nombre.split(' ').slice(0,2).join(' ');
-      var ultimaRev = _.where($scope.user.historial,{'fecha':$scope.user.fechaUltimaRev});
-      $scope.ultimaRev = ultimaRev[0];
-      $scope.ultimaFecha  = moment($scope.user.fechaUltimaRev).format('DD MMMM YYYY');
-      $scope.proximaFecha = moment($scope.user.fechaProximaRev).format('DD MMMM YYYY');
-    });
-
   });
