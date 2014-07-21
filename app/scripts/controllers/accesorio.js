@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('roverApp')
-  .controller('AccesorioCtrl', function ($scope,$cookieStore,$routeParams,$location,vin) {
+  .controller('AccesorioCtrl', function ($scope,$cookieStore,$routeParams,$location,vin,mailer) {
     var vinNum  = $cookieStore.get('vinNum');
     var codigo  = $routeParams.id;
+    $scope.msj  = 'Encargar';
     vin.getUser(vinNum).then(function(user){
       var model = user[0].modelo.replace(/\s/g, '').toLowerCase();
       vin.getAcsry(model).then(function(data){
@@ -28,6 +29,26 @@ angular.module('roverApp')
         		navigator.vibrate(1000);
         	}
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
+        };
+
+        $scope.encargo = function(){
+        	console.log(data.accesorios[currentIndex]);
+        	var obj = {
+            'subj' : 'ENCARGO APP',
+            'type' : 'EN',
+            'acc'  : data.accesorios[currentIndex]
+          };
+
+          mailer.submitForm(obj).then(function(data){
+            if(data[0].status === 'sent'){
+              $scope.icono = 'fa fa-check-circle-o';
+              $scope.msj  = 'Encargado';
+            }else{
+            	$scope.icono = 'fa fa-times-circle-o';
+              $scope.msj = 'Erorr de encargo';
+            }
+          });
+
         };
 
       });

@@ -16,7 +16,8 @@
         overflow     : hidden;
         background   : getColor(snow);  
         width        : 150px;
-        height       : 130px;  
+        max-height   : 130px;
+        min-height   : 130px; 
         text-align   : center;
         border       : 1px solid getColor(cielo); 
         a{

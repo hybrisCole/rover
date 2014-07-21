@@ -1,13 +1,22 @@
-<div class="row">
+<div class="row perfi">
   <div class="tatz-10">
     <div class="busqueda-box">
-      <p class="busqueda-titulo">Contáctenos</p>
-      <textarea placeholder="Comentarios" type="text" rows="10" class="comentarios-campo" ng-model="searchText"></textarea>
-      <div class="enviar-btn">
-        <p><i class="fa fa-envelope-o"></i>Enviar comentario</p>
-      </div>
-      <div class="llamar-agencia">
-        <p><i class="fa fa-phone"></i><a href="tel:2257-4247">Llamar a la agencia</a></p>
+      <p class="busqueda-titulo">Configuración</p>
+    </div>
+    <div class="info">
+      <p>Nombre : {{user.nombre}}</p>
+      <p>Vin : {{user.vin}}</p>
+      <p>Modelo : {{user.modelo}}</p>
+      <p>Año: {{user.year}}</p>
+      <p></p>
+      <form action="">
+        <p>Celular:</p>
+        <input type="text">
+        <p>E-mail:</p>
+        <input type="text">
+      </form>
+      <div class="btn-agendar" ng-click="cerrarSession()">
+        <p>Cerrar Session<i class="fa fa-power-off"></i></p>
       </div>
     </div>
   </div>

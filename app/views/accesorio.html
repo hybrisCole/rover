@@ -1,11 +1,19 @@
-<div class="row accesorio" ng-swipe-left="left()" ng-swipe-right="right()">
-	<div class="tatz-10 img-cont">
-		<img ng-if="accesorio.img" ng-src="images/accesorios/{{modelo}}/{{accesorio.img}}" alt="">
+<div class="accesorio" ng-swipe-left="left()" ng-swipe-right="right()">
+	<div class="row">
+		<div class="tatz-10 img-cont">
+			<img ng-if="accesorio.img" ng-src="images/accesorios/{{modelo}}/{{accesorio.img}}" alt="">
+		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="tatz-10">
-		<p>{{accesorio.accesorio}}</p>
-		<p>{{accesorio.codigo}}</p>
-	</div>
-</div>
+	<div class="row info">
+		<div class="tatz-10">
+			<p class="name">{{accesorio.accesorio}}</p>
+			<p class="code">Codigo:{{accesorio.codigo}}</p>
+			<p class="desc">Descripción:</p>
+			<p class="desc-p">{{accesorio.desc}}</p>
+			<div class="btn-agendar" ng-click="encargo()">
+        <p>{{msj}}<i class="{{icono}}"></i></p>
+      </div>
+		</div>
+	</div>	
+</div>	
+

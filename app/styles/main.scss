@@ -17,6 +17,7 @@
 @import "layout/home";
 @import "layout/busqueda";
 @import "layout/accesorio";
+@import "layout/hist";
 
 *:focus { outline: none }
 
@@ -127,6 +128,17 @@ body {
         margin-top : 15px;
         font-size  : 15px;
         padding    : 10px;
+      }
+      .obteniendo{
+        text-align : center;
+        margin-top : 30px;
+        i{
+          color : getColor(cielo);
+        }  
+        p{
+          margin-top : 15px; 
+          color      : getColor(cobalto);
+        }
       }
     }
   }

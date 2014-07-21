@@ -24,16 +24,22 @@
 <div class="modal-emergency" ng-show="showEmer">
   <div class="cont">
     <i class="fa fa-times-circle fa-2x close" ng-click="openModal()"></i>
-    <div class="info">
+    <div class="info" ng-show="isReady">
       <h1>Emergencias Motores Britanicos</h1>
       <p>Su ubicación es: <span ng-click="goTo('/near')">{{ubicacion}}.</span></p>
-      <textarea>
+      <textarea ng-model="coment">
       </textarea>
       <div class="enviar-btn" ng-click="sendMail()">
         <p><i class="fa fa-envelope-o"></i>Pedir Ayuda!</p>
       </div>
       <div class="llamar-agencia">
-        <p><i class="fa fa-phone"></i><a href="tel:2257-4247">Llamar a la agencia</a></p>
+        <a href="tel:2257-4247"><p><i class="fa fa-phone"></i>Llamar a la agencia</p></a>
+      </div>
+    </div>
+    <div class="info" ng-hide="isReady">
+      <div class="obteniendo">
+        <i class="{{icon}}"></i>
+        <p>{{msj}}</p>
       </div>
     </div>
   </div>

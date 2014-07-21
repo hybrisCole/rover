@@ -15,20 +15,19 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row hist">
   <div class="tatz-10">
     <div class="accesorio-box" ng-repeat="hist in historial | filter:searchText">
       <div class="row">
-        <div class="pull-left tatz-5">
-          <p>Fecha : {{hist.fecha}}</p>
-        </div>
-        <div class="pull-rigth tatz-5">
-          <p>Kilometraje : {{hist.km}}</p>
+        <div class="tatz-10">
+          <p class="fecha">Fecha : {{hist.fecha}}</p>
+          <p class="kms">Kilometraje : {{hist.km}} Km's</p>
+          <p class="serv">Servicios:</p>
+          <span ng-repeat="list in hist.list">
+            <p class="item"><i class="fa fa-arrow-right"></i>{{list}}</p>
+          </span>
         </div>
       </div>
-      <span ng-repeat="list in hist.list">
-        <p>{{list}}</p>
-      </span>
     </div>
   </div>
 </div>

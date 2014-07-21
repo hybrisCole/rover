@@ -12,7 +12,14 @@ angular.module('roverApp')
         /* jshint camelcase: false*/
         var template = '';
         if(obj.type === 'E'){
-          template = '<p>Cliente:'+person.nombre+'</p><p>VIN:'+person.vin+'</p><p>'+obj.ubicacion+'</p><a href="http://maps.google.com/maps?q='+obj.cords[0]+','+obj.cords[1]+'&ll='+obj.cords[0]+','+obj.cords[1]+'&z=17">Ubicacion</a>'
+          if(obj.coment === undefined){
+            obj.coment = 'no hay comentarios';
+          }
+          template = '<p>Cliente: '+person.nombre+'</p><p>VIN: '+person.vin+'</p><p>comentario adicional: '+obj.coment+'</p><p>Ubicación: '+obj.ubicacion+'</p><a href="http://maps.google.com/maps?q='+obj.cords[0]+','+obj.cords[1]+'&ll='+obj.cords[0]+','+obj.cords[1]+'&z=17">ver ubicacion</a>';
+        }else if(obj.type === 'EN'){
+          template = '<p>Cliente: '+person.nombre+'</p><p>VIN: '+person.vin+'</p><p>nombre accesorio: '+obj.acc.accesorio+'</p><p>codigo del accesorio: '+obj.acc.codigo+'</p>';
+        }else if(obj.type === 'R'){
+          template = '<p>Cliente: '+person.nombre+'</p><p>VIN: '+person.vin+'</p><p>fecha :'+obj.fecha+'</p><p>revision de los: '+obj.km+'kilometros</p>';
         }
         var defer = $q.defer();
         $http({

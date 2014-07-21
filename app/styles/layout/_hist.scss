@@ -1,0 +1,25 @@
+.hist{
+	p{
+		font-family : $robotoregular; 
+		color       : getColor(cobalto);
+	}
+	.fecha{
+		font-size : 30px;
+		color     : getColor(cielo); 
+	}
+	.kms{
+		margin-top : 5px; 
+		font-size  : 25px; 
+		color      : getColor(cielo);
+	}
+	.serv{
+		margin-top : 10px;
+	}
+	.item{
+		margin-top : 5px; 
+		.fa{
+			color        : getColor(cielo);
+			margin-right : 5px; 
+		}
+	} 
+}

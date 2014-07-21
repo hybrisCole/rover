@@ -29,8 +29,8 @@
         <div class="proxim">
           <p>Próxima revisión {{user.kmProximaRev}}Kms<i class="fa fa-plus-circle fa-lg"></i></p>
           <p><i class="fa fa-clock-o"></i>Fecha apróxima: {{proximaFecha}}</p>
-          <div class="btn-agendar">
-            <p>Agendar Revisión</p>
+          <div class="btn-agendar" ng-click="agendar()">
+            <p>{{msj}}<i class="{{icono}}"></i></p>
           </div>
         </div>
       </div>
