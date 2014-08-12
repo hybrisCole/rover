@@ -47,7 +47,6 @@ angular.module('roverApp')
             'cords'     : scope.latLng,
             'coment'    : scope.coment
           };
-
           mailer.submitForm(obj).then(function(data){
             if(data[0].status === 'sent'){
               scope.icon     = 'fa fa-check-circle-o fa-4x';
@@ -56,6 +55,9 @@ angular.module('roverApp')
               scope.icon = 'fa fa-times-circle-o fa-4x';
               scope.msj = 'Hubor un error con su mensaje, por favor intente de nuevo';
             }
+          },function(){
+            scope.icon = 'fa fa-times-circle-o fa-4x';
+            scope.msj = 'Hubor un error con su mensaje, por favor intente de nuevo';
           });
         };
       

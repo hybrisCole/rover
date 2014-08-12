@@ -24,6 +24,7 @@
     "GMaps":false,
     "google":false,
     "_":false,
-    "moment":false
+    "moment":false,
+    "alert":false
   }
 }
