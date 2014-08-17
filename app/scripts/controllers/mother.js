@@ -9,8 +9,8 @@ angular.module('roverApp')
       if(localStorage.getItem('vinNum') !== null){
         vinNum = localStorage.getItem('vinNum');
         vin.getUser(vinNum).then(function(user){
-          $scope.user = user[0];
-          $scope.nombre = user[0].nombre.split(' ').slice(0,2).join(' ');
+          $scope.user = user;
+          $scope.nombre = user.nombre;
           var ultimaRev = _.where($scope.user.historial,{'fecha':$scope.user.fechaUltimaRev});
           $scope.ultimaRev = ultimaRev[0];
           $scope.ultimaFecha  = moment($scope.user.fechaUltimaRev).format('DD MMMM YYYY');

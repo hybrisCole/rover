@@ -21,6 +21,9 @@ angular.module('roverApp')
           }else{
             $scope.errorVin = 'Su VIN no se encuentra registrado';
           }
+        },function(err){
+          console.log(err);
+          $scope.errorVin = 'Su VIN no se encuentra registrado';
         });
       }else{
         $scope.errorVin = 'Ingrese su VIN';

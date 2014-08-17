@@ -2,16 +2,20 @@
 
 angular.module('roverApp')
   .factory('vin', function($http,$q){
+    var OjbVIN;
     return {
       getUser : function(vinNumber){
         var deferred = $q.defer();
-        $http.get('./json/vin.json').success(function(data){
-          //TODO:this is dummy please erase in production, data should return the user instead users obj.
-          var user = _.where(data,{ 'vin':  vinNumber});
-          deferred.resolve(user);
-        }).error(function(){
-          deferred.reject();
-        });
+        if(OjbVIN){
+          deferred.resolve(OjbVIN);
+        }else{
+          $http.get('http://roverhapi.nodejitsu.com/vin/'+vinNumber).success(function(response){
+            OjbVIN = response;
+            deferred.resolve(OjbVIN);
+          }).error(function(){
+            deferred.reject();
+          });
+        }
         return deferred.promise;
       },
       getAcsry : function(model){
@@ -23,6 +27,9 @@ angular.module('roverApp')
           deferred.reject();
         });
         return deferred.promise;
+      },
+      cerrarSesion:function(){
+        OjbVIN = undefined;
       }
     };
   });

@@ -1,0 +1,31 @@
+{
+  "name": "roverHapi",
+  "version": "0.0.1-4",
+  "description": "Servidor que sirva como CORS bridge entre los <<html/json>> que hicieron en Motores Britanicos y el App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hybrisCole/rover/roverHapi"
+  },
+  "keywords": [
+    "hapi",
+    "cors"
+  ],
+  "author": "Alberto Cole <acpii2005@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hybrisCole/imageMerge/issues"
+  },
+  "homepage": "https://github.com/hybrisCole/rover/roverHapi",
+  "dependencies": {
+    "hapi": "6.5.1"
+  },
+  "subdomain": "roverHapi",
+  "engines": {
+    "node": "0.10.x"
+  }
+}

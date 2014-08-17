@@ -32,7 +32,7 @@ angular.module('roverApp')
         var vinNum = localStorage.getItem('vinNum');
 
         vin.getUser(vinNum).then(function(user){
-          var model = user[0].modelo.replace(/\s/g, '').toLowerCase();
+          var model = user.modelo.replace(/\s/g, '').toLowerCase();
           vin.getAcsry(model).then(function(data){
             scope.accesorios = data;
           });

@@ -19,8 +19,7 @@ angular
     'ngTouch',
     'ngSlideVelocity'
   ])
-  .config(function ($routeProvider,$httpProvider){
-    console.log($httpProvider);
+  .config(function ($routeProvider){
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

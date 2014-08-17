@@ -10,7 +10,7 @@ angular.module('roverApp')
             person = {},
             vinNum = localStorage.getItem('vinNum');
         vin.getUser(vinNum).then(function(user){
-          person = user[0];
+          person = user;
           var template = '';
           if(obj.type === 'E'){
             if(obj.coment === undefined){
