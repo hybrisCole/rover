@@ -9,7 +9,7 @@ angular.module('roverApp')
         if(OjbVIN){
           deferred.resolve(OjbVIN);
         }else{
-          $http.get('http://roverhapi.nodejitsu.com/vin/'+vinNumber).success(function(response){
+          $http.get('http://motoresbritanicos-vinserver.rhcloud.com/vin/'+vinNumber).success(function(response){
             OjbVIN = response;
             deferred.resolve(OjbVIN);
           }).error(function(){
