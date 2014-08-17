@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('roverApp')
-  .factory('mailer', function($http,$q,$cookieStore,vin){
+  .factory('mailer', function($http,$q,vin){
 
     return {
       submitForm : function(obj){
         /* jshint camelcase: false*/
         var defer = $q.defer(),
             person = {},
-            vinNum = $cookieStore.get('vinNum');
+            vinNum = localStorage.getItem('vinNum');
         vin.getUser(vinNum).then(function(user){
           person = user[0];
           var template = '';

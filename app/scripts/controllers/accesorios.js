@@ -8,9 +8,9 @@
  * Controller of the roverApp
  */
 angular.module('roverApp')
-  .controller('AccesoriosCtrl', function ($scope,$cookieStore,vin){
+  .controller('AccesoriosCtrl', function ($scope,vin){
 
-    var vinNum = $cookieStore.get('vinNum');
+    var vinNum = localStorage.getItem('vinNum');
 
     vin.getUser(vinNum).then(function(user){
       var model = user[0].modelo.replace(/\s/g, '').toLowerCase();

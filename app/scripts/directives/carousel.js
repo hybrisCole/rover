@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('roverApp')
-  .directive('carousel', function ($window,$cookieStore,vin) {
+  .directive('carousel', function ($window,vin) {
     return {
       templateUrl : 'views/carousel.html',
       restrict    : 'E',
@@ -29,7 +29,7 @@ angular.module('roverApp')
         	element.find('#skroll li').first().velocity({marginLeft : move+'px'}, 300, 'swing');
         };
 
-        var vinNum = $cookieStore.get('vinNum');
+        var vinNum = localStorage.getItem('vinNum');
 
         vin.getUser(vinNum).then(function(user){
           var model = user[0].modelo.replace(/\s/g, '').toLowerCase();

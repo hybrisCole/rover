@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('roverApp')
-  .controller('PerfilCtrl', function ($scope,$cookieStore,$location) {
+  .controller('PerfilCtrl', function ($scope,$location) {
     $scope.cerrarSession = function(){
-    	$cookieStore.remove('vinNum');
+    	localStorage.removeItem('vinNum');
     	$location.path('/');
     };
   });

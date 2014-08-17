@@ -6,7 +6,7 @@ angular.module('roverApp')
       getUser : function(vinNumber){
         var deferred = $q.defer();
         $http.get('./json/vin.json').success(function(data){
-          //TODO:this is dummy please erase in production, data should return the user intead users obj.
+          //TODO:this is dummy please erase in production, data should return the user instead users obj.
           var user = _.where(data,{ 'vin':  vinNumber});
           deferred.resolve(user);
         }).error(function(){
