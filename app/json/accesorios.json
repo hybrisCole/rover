@@ -64,7 +64,29 @@
   ]
 },
 {
-  "modelo":"rangeroverevoque",
+  "modelo":"discovery",
+  "accesorios":[
+    {
+      "accesorio":"Faldones delanteros",
+      "codigo":"vplvp0065",
+      "img":"vplvp0065.jpg",
+      "desc":"Los guardabarros reducen las salpicaduras y ayudan a proteger la pintura de la carrocería."
+    }
+  ]
+},
+{
+  "modelo":"freelander",
+  "accesorios":[
+    {
+      "accesorio":"Faldones delanteros",
+      "codigo":"vplvp0065",
+      "img":"vplvp0065.jpg",
+      "desc":"Los guardabarros reducen las salpicaduras y ayudan a proteger la pintura de la carrocería."
+    }
+  ]
+},
+{
+  "modelo":"rangeroversport",
   "accesorios":[
     {
       "accesorio":"Faldones delanteros",
