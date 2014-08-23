@@ -64,35 +64,201 @@
   ]
 },
 {
-  "modelo":"discovery",
-  "accesorios":[
-    {
-      "accesorio":"Faldones delanteros",
-      "codigo":"vplvp0065",
-      "img":"vplvp0065.jpg",
-      "desc":"Los guardabarros reducen las salpicaduras y ayudan a proteger la pintura de la carrocería."
-    }
-  ]
-},
-{
   "modelo":"freelander",
   "accesorios":[
     {
       "accesorio":"Faldones delanteros",
-      "codigo":"vplvp0065",
-      "img":"vplvp0065.jpg",
+      "codigo":"lr003324",
+      "img":"lr003324.jpg",
       "desc":"Los guardabarros reducen las salpicaduras y ayudan a proteger la pintura de la carrocería."
+    },
+    {
+      "accesorio":"Faldones Traseros",
+      "codigo":"lr003322",
+      "img":"lr003322.jpg",
+      "desc":"Los guardabarros reducen las salpicaduras y ayudan a proteger la pintura de la carrocería."
+    },
+    {
+      "accesorio":"Molduras Laterales",
+      "codigo":"lr003840",
+      "img":"lr003840.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Alfombra de Hule",
+      "codigo":"vplfs0234",
+      "img":"vplfs0234.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Porta Bicicleta",
+      "codigo":"vplfr0091",
+      "img":"vplfr0091.jpg",
+      "desc":"El soporte para bicicletas con cierre está diseñado para el transporte de una sola bicicleta. Los raíles de techo y las barras transversales pueden acomodar hasta tres soportes para bicicletas."
+    },
+    {
+      "accesorio":"Rieles y barras cruzadas",
+      "codigo":"lr006608",
+      "img":"lr006608.jpg",
+      "desc":"Todos los accesorios para el techo requieren raíles y barras transversales. Los objetos colocados por encima de la antena satélite del techo pueden reducir la calidad de la señal recibida y tener un efecto perjudicial para los sistemas de navegación y radio por satélite, si disponibles. Barras transversales no incluidas."
+    },
+    {
+      "accesorio":"Instalacion electrica para remolque",
+      "codigo":"vplft0077",
+      "img":"vplft0077.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Adaptador de 13 a 7 pines",
+      "codigo":"vplvt0064",
+      "img":"vplvt0064.jpg",
+      "desc":""
     }
   ]
 },
 {
+  "modelo":"rangerover",
+  "accesorios":[
+    {
+      "accesorio":"Alfombra de Carga",
+      "codigo":"vplss0043",
+      "img":"vplss0043.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Alfombra de Hule",
+      "codigo":"lr006242",
+      "img":"lr006242.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Faldones delanteros",
+      "codigo":"cas500070pcl",
+      "img":"cas500070pcl.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Faldones Traseros",
+      "codigo":"vplsp0016",
+      "img":"vplsp0016.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Instalacion electrica para remolque",
+      "codigo":"vplst0014",
+      "img":"vplst0014.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Rieles y barras cruzadas",
+      "codigo":"vub502130",
+      "img":"vub502130.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Rieles de techo",
+      "codigo":"lr006848",
+      "img":"lr006848.jpg",
+      "desc":""
+    }
+  ]
+},
+{
+  "modelo":"discovery",
+  "accesorios":[
+    {
+      "accesorio":"Faldon Delantero",
+      "codigo":"cas500010pcl",
+      "img":"cas500010pcl.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Faldon Trasero",
+      "codigo":"vplap0017",
+      "img":"vplap0017.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Alfombra de Hule",
+      "codigo":"lr006238",
+      "img":"lr006238.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Estribos",
+      "codigo":"vplap0035",
+      "img":"vplap0035.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Molduras Laterales",
+      "codigo":"vplap0012",
+      "img":"vplap0012.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Barras cruzadas",
+      "codigo":"lr007472",
+      "img":"lr007472.jpg",
+      "desc":"Los raíles y barras transversales para el techo son necesarios en todos los accesorios para techo de Land Rover. Los objetos colocados por encima de la antena satélite del techo pueden reducir la calidad de la señal recibida y pueden tener un efecto perjudicial para los sistemas de navegación y radio por satélite si están instalados"
+    },
+    {
+      "accesorio":"Largueros",
+      "codigo":"cap500120PVJ",
+      "img":"cap500120PVJ.jpg",
+      "desc":"Los raíles y barras transversales para el techo son necesarios en todos los accesorios para techo de Land Rover. Los objetos colocados por encima de la antena satélite del techo pueden reducir la calidad de la señal recibida y pueden tener un efecto perjudicial para los sistemas de navegación y radio por satélite si están instalados."
+    },
+    {
+      "accesorio":"Alfombra de Carga",
+      "codigo":"lr006401",
+      "img":"lr006401.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Instalacion electrica para remolque",
+      "codigo":"VPLAT0011",
+      "img":"VPLAT0011.jpg",
+      "desc":"Con cierre de seguridad. Fácil de desmontar. Solo para uso en actividades de tiempo libre. Bola de 50 mm. Altura: 400 mm desde el suelo. Capacidad de carga del remolque de 3.500 kg (150 kg de carga en el eje del remolque)."
+    }
+  ]
+}{
   "modelo":"rangeroversport",
   "accesorios":[
     {
-      "accesorio":"Faldones delanteros",
-      "codigo":"vplvp0065",
-      "img":"vplvp0065.jpg",
-      "desc":"Los guardabarros reducen las salpicaduras y ayudan a proteger la pintura de la carrocería."
+      "accesorio":"Alfombra de Carga",
+      "codigo":"vplss0043",
+      "img":"vplss0043.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Alfombras de Hule",
+      "codigo":"lr006242",
+      "img":"lr006242.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Faldones Delanteros",
+      "codigo":"cas500070pcl",
+      "img":"cas500070pcl.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Faldones Traseros",
+      "codigo":"vplsp0016",
+      "img":"vplsp0016.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Molduras laterales",
+      "codigo":"dgj500020pcl",
+      "img":"dgj500020pcl.jpg",
+      "desc":""
+    },
+    {
+      "accesorio":"Rieles y barras cruzadas",
+      "codigo":"vub502130",
+      "img":"vub502130.jpg",
+      "desc":""
     }
   ]
 }]
