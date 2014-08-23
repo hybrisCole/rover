@@ -7,6 +7,18 @@ angular.module('roverApp')
     $scope.msj  = 'Encargar';
     vin.getUser(vinNum).then(function(user){
       var model = user.modelo.replace(/\s/g, '').toLowerCase();
+      var objM  = [
+        'discovery',
+        'freelander',
+        'rangerover',
+        'rangeroverevoque',
+        'rangeroversport'
+      ];
+
+      if(!_.contains(objM,model)){
+        model = localStorage.getItem('model');
+      }
+      
       vin.getAcsry(model).then(function(data){
         var acce = _.where(data.accesorios,{ 'codigo': codigo});
         $scope.modelo = data.modelo;

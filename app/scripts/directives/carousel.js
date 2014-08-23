@@ -32,7 +32,22 @@ angular.module('roverApp')
         var vinNum = localStorage.getItem('vinNum');
 
         vin.getUser(vinNum).then(function(user){
+          
           var model = user.modelo.replace(/\s/g, '').toLowerCase();
+          
+          var objM  = [
+            'discovery',
+            'freelander',
+            'rangerover',
+            'rangeroverevoque',
+            'rangeroversport'
+          ];
+
+          if(!_.contains(objM,model)){
+            model = objM[Math.floor((Math.random() * 5) + 1)];
+            localStorage.setItem('model', model);
+          }
+
           vin.getAcsry(model).then(function(data){
             scope.accesorios = data;
           });
