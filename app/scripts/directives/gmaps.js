@@ -17,7 +17,7 @@ angular.module('roverApp')
         
         map.map.setOptions({'scrollwheel': false});
         
-        var positionTimer = navigator.geolocation.watchPosition(function(position){
+        var positionTimer = navigator.geolocation.getCurrentPosition(function(position){
 
           var markerObj = [{lat:9.946114,lng:-84.088296},{lat:position.coords.latitude,lng:position.coords.longitude}];
 
@@ -48,14 +48,6 @@ angular.module('roverApp')
             strokeWeight  : 5
           });
 
-          map.getRoutes({
-            origin: [position.coords.latitude, position.coords.longitude],
-            destination: [9.946114, -84.088296],
-            travelMode    : 'driving',
-            callback: function (e) {
-              console.log(e);
-            }
-          });
         });
 
         scope.$on('$locationChangeStart', function (){
