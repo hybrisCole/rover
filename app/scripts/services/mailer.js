@@ -28,7 +28,7 @@ angular.module('roverApp')
             data: {
               key: 'Mc6ZOBIWpMlars79hfS3sw',
               message: {
-                from_email: 'carloz@ramirez.com',
+                from_email: 'noreply@motoresbritanicos.net',
                 to: [{
                   email: 'abdeldw@gmail.com',
                   name: 'Abdel Atencio',

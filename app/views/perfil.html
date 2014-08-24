@@ -11,10 +11,13 @@
       <p></p>
       <form action="">
         <p>Celular:</p>
-        <input type="text">
+        <input type="text" ng-model="perfilInfo.celular">
         <p>E-mail:</p>
-        <input type="text">
+        <input type="text" ng-model="perfilInfo.email">
       </form>
+      <div class="btn-agendar" style="color:#78a3bc; border-color: #78a3bc" ng-click="guardarDatos()">
+        <p style="color:#78a3bc;">{{btnGuardarTexto}}<i class="fa fa-check"></i></p>
+      </div>
       <div class="btn-agendar" ng-click="cerrarSession()">
         <p>Cerrar Session<i class="fa fa-power-off"></i></p>
       </div>

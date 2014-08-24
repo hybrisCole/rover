@@ -52,8 +52,16 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).run(function($rootScope,$location,$timeout,$cookieStore,vin){
-    
+  }).run(function($rootScope,$location,$timeout,$cookieStore,vin,FIREBASEURL){
+
+    var authRef = new Firebase(FIREBASEURL),
+        auth = new FirebaseSimpleLogin(authRef,function(){});
+
+    auth.login('password', {
+      email: 'trololo@trololo.com',
+      password: 'trololo@trololo.com'
+    });
+
     $rootScope.menu = false;
 
     $rootScope.$on('$routeChangeSuccess',function(){

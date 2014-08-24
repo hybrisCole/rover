@@ -28,21 +28,21 @@
 			font-size  : 15px;  
 		}
 		.btn-agendar{
-      border        : solid 2px getColor(cielo);
-      color         : getColor(cielo);  
-      width         : getPorcentual(nine);  
-      margin        : 40px auto 40px auto; 
-      padding       : 10px; 
-      border-radius : 8px;
-      p{
-      	text-align : center; 
-        font-size  : 25px; 
-        color      : getColor(rojo);
-      }
-      i{
-      	margin-left : 10px; 
-      }
-    } 
+          border        : solid 2px getColor(cielo);
+          color         : getColor(cielo);
+          width         : getPorcentual(nine);
+          margin        : 40px auto 40px auto;
+          padding       : 10px;
+          border-radius : 8px;
+          p{
+            text-align : center;
+            font-size  : 25px;
+            color      : getColor(rojo);
+          }
+          i{
+            margin-left : 10px;
+          }
+        }
 	}
 }
 
@@ -61,6 +61,8 @@
 		height : 40px;
 		width  : 100%; 
 		border-radius : 8px;
+        font-size:20px;
+        padding-left:10px;
 	}
 	.btn-agendar{
       border        : solid 2px getColor(rojo);
@@ -77,5 +79,6 @@
       i{
       	margin-left : 10px; 
       }
-    } 
+    }
+
 }

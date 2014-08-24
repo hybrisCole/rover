@@ -25,6 +25,8 @@
     "google":false,
     "_":false,
     "moment":false,
-    "alert":false
+    "alert":false,
+    "Firebase":false,
+    "FirebaseSimpleLogin":false
   }
 }
