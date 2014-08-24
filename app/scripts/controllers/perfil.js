@@ -3,16 +3,21 @@
 angular.module('roverApp')
   .controller('PerfilCtrl', function ($scope,$location,firebaseService,vin) {
     $scope.btnGuardarTexto = 'Guardar';
-    $scope.perfilInfo = {
-      email:'',
-      celular:''
-    };
-
     firebaseService
       .getPerfilInfo(localStorage.getItem('vinNum'))
       .then(function(perfilFireInfo){
-        $scope.perfilInfo = perfilFireInfo;
-    });
+        if(perfilFireInfo.email === ''){
+          vin.getUser(localStorage.getItem('vinNum')).then(function(user){
+            $scope.perfilInfo = {
+              email:user.correo,
+              celular:user.telefono
+            };
+          });
+        }else{
+          $scope.perfilInfo = perfilFireInfo;
+        }
+
+      });
     $scope.cerrarSession = function(){
     	localStorage.removeItem('vinNum');
       vin.cerrarSesion();

@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('roverApp')
-  .factory('mailer', function($http,$q,vin){
-
+  .factory('mailer', function($http,$q,vin,firebaseService){
+    var mailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return {
       submitForm : function(obj){
         /* jshint camelcase: false*/
@@ -22,31 +22,41 @@ angular.module('roverApp')
           }else if(obj.type === 'R'){
             template = '<p>Cliente: '+person.nombre+'</p><p>VIN: '+person.vin+'</p><p>fecha :'+obj.fecha+'</p><p>revision de los: '+obj.km+'kilometros</p>';
           }
-          $http({
-            method: 'POST',
-            url: 'https://mandrillapp.com/api/1.0/messages/send.json',
-            data: {
-              key: 'Mc6ZOBIWpMlars79hfS3sw',
-              message: {
-                from_email: 'noreply@motoresbritanicos.net',
-                to: [{
-                  email: 'abdeldw@gmail.com',
-                  name: 'Abdel Atencio',
-                  type: 'to'
-                }, {
-                  email: 'acpii2005@gmail.com',
-                  name: 'Beto',
-                  type: 'to'
-                }],
-                autotext: 'true',
-                subject: obj.subj,
-                html: template
-              }
+          firebaseService.getPerfilInfo(vinNum).then(function(perfilInfo){
+            var recipients = [{
+              email: 'abdeldw@gmail.com',
+              name: 'Abdel Atencio',
+              type: 'to'
+            }, {
+              email: 'acpii2005@gmail.com',
+              name: 'Beto',
+              type: 'to'
+            }];
+            if(mailRegex.test(perfilInfo.email)){
+              recipients.push({
+                email:perfilInfo.email,
+                name:person.nombre,
+                type:'to'
+              });
             }
-          }).success(function (data) {
-            defer.resolve(data);
-          }).error(function(data) {
-            defer.reject(data);
+            $http({
+              method: 'POST',
+              url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+              data: {
+                key: 'Mc6ZOBIWpMlars79hfS3sw',
+                message: {
+                  from_email: 'noreply@motoresbritanicos.net',
+                  to: recipients,
+                  autotext: 'true',
+                  subject: obj.subj,
+                  html: template
+                }
+              }
+            }).success(function (data) {
+              defer.resolve(data);
+            }).error(function(data) {
+              defer.reject(data);
+            });
           });
         });
         return defer.promise;
