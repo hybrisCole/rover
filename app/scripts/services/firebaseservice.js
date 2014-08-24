@@ -37,6 +37,25 @@ angular.module('roverApp')
         deferred.resolve(info);
 
         return deferred.promise;
+      },
+      agendar : function(vin,info){
+        var deferred = $q.defer(),
+            roverRef = new Firebase(FIREBASEURL+'/agenda');
+
+        roverRef.child(vin).update(info);
+        deferred.resolve(info);
+
+        return deferred.promise;
+      },
+      getAgenda : function(vin){
+        var deferred = $q.defer(),
+            roverRef = new Firebase(FIREBASEURL+'/agenda');
+
+        roverRef.child(vin).once('value', function(dataSnapshot){
+          deferred.resolve(dataSnapshot.val());
+        });
+
+        return deferred.promise;
       }
     };
   });

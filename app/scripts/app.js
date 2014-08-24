@@ -52,7 +52,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).run(function($rootScope,$location,$timeout,$cookieStore,vin,FIREBASEURL){
+  }).run(function($rootScope,$location,$timeout,vin,FIREBASEURL){
 
     var authRef = new Firebase(FIREBASEURL),
         auth = new FirebaseSimpleLogin(authRef,function(){});
@@ -69,13 +69,14 @@ angular
       if($location.path() !== '/'){
         $timeout(function() {
           $rootScope.menu = true;
+          angular.element('body').css('overflow','auto');
         }, 300);
       }else{
         $rootScope.menu = false;
       }
 
-      if(!_.isUndefined($cookieStore.get('vinNum')) && $location.path() === '/'){
-        vin.getUser($cookieStore.get('vinNum')).then(function(data){
+      if(!_.isUndefined(localStorage.getItem('vinNum')) && $location.path() === '/'){
+        vin.getUser(localStorage.getItem('vinNum')).then(function(data){
           if(!_.isEmpty(data)){
             $location.path('/home');
           }else{
