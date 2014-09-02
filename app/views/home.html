@@ -9,7 +9,7 @@
   <div class="ultima-rev">
     <p class="title">Útima Revisión</p>
     <ul class="servicio">
-      <li ng-repeat="servicio in ultimaRev.listado">
+      <li ng-repeat="servicio in ultimaRev.listado track by $index">
         <p><i class="fa fa-arrow-right"></i>{{servicio}}</p>
       </li>
     </ul>

@@ -6,20 +6,28 @@ angular.module('roverApp')
     return {
       submitForm : function(obj){
         /* jshint camelcase: false*/
-        var defer = $q.defer(),
-            person = {},
-            vinNum = localStorage.getItem(LSVIN);
+        var defer    = $q.defer(),
+            person   = {},
+            vinNum   = localStorage.getItem(LSVIN),
+            name     = '',
+            toEmail  = '',
+            template = '';
         vin.getUser(vinNum).then(function(user){
-          person = user;
-          var template = '';
+          person = user;   
           if(obj.type === 'E'){
+            name    = 'Emergencia';
+            toEmail = 'emergencia@motoresbritanicos.com';
             if(obj.coment === undefined){
               obj.coment = 'no hay comentarios';
             }
             template = '<p>Cliente: '+person.nombre+'</p><p>VIN: '+person.vin+'</p><p>comentario adicional: '+obj.coment+'</p><p>Ubicación: '+obj.ubicacion+'</p><a href="http://maps.google.com/maps?q='+obj.cords[0]+','+obj.cords[1]+'&ll='+obj.cords[0]+','+obj.cords[1]+'&z=17">ver ubicacion</a>';
           }else if(obj.type === 'EN'){
+            name     = 'Ventas';
+            toEmail  = 'ventas@motoresbritanicos.com';
             template = '<p>Cliente: '+person.nombre+'</p><p>VIN: '+person.vin+'</p><p>nombre accesorio: '+obj.acc.accesorio+'</p><p>codigo del accesorio: '+obj.acc.codigo+'</p>';
           }else if(obj.type === 'R'){
+            name     = 'Citas';
+            toEmail  = 'citas@motoresbritanicos.com';
             template = '<p>Cliente: '+person.nombre+'</p><p>VIN: '+person.vin+'</p><p>fecha :'+obj.fecha+'</p><p>revision de los: '+obj.km+'kilometros</p>';
           }
           firebaseService.getPerfilInfo(vinNum).then(function(perfilInfo){
@@ -34,6 +42,10 @@ angular.module('roverApp')
             }, {
               email: 'acpii2005@gmail.com',
               name: 'Cole',
+              type: 'to'
+            },{
+              email: 'acpii2005@gmail.com',
+              name: name,
               type: 'to'
             }];
             if(mailRegex.test(perfilInfo.email)){
