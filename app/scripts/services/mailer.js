@@ -24,12 +24,16 @@ angular.module('roverApp')
           }
           firebaseService.getPerfilInfo(vinNum).then(function(perfilInfo){
             var recipients = [{
+              email: 'emergencia@motoresbritanicos.com',
+              name: 'Emergencias Motores Británicos',
+              type: 'to'
+            },{
               email: 'abdeldw@gmail.com',
               name: 'Abdel Atencio',
               type: 'to'
             }, {
               email: 'acpii2005@gmail.com',
-              name: 'Beto',
+              name: 'Cole',
               type: 'to'
             }];
             if(mailRegex.test(perfilInfo.email)){
