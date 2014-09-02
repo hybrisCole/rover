@@ -8,8 +8,8 @@
  * Controller of the roverApp
  */
 angular.module('roverApp')
-  .controller('HomeCtrl', function($scope,mailer,firebaseService){
-    var vinNum = localStorage.getItem('vinNum');   
+  .controller('HomeCtrl', function($scope,mailer,firebaseService,LSVIN){
+    var vinNum = localStorage.getItem(LSVIN);
     firebaseService.getAgenda(vinNum).then(function(data){
       if(!_.isNull(data)){
         $scope.icono = 'fa fa-check-circle-o';

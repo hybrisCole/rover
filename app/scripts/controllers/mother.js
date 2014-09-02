@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('roverApp')
-  .controller('MotherCtrl', function($scope,$rootScope,$location,vin){
+  .controller('MotherCtrl', function($scope,$rootScope,$location,vin,LSVIN){
     
     $rootScope.menu = false;
     var vinNum = '';
     $rootScope.$on('$routeChangeSuccess',function(){
-      if(localStorage.getItem('vinNum') !== null){
-        vinNum = localStorage.getItem('vinNum');
+      if(localStorage.getItem(LSVIN) !== null){
+        vinNum = localStorage.getItem(LSVIN);
         vin.getUser(vinNum).then(function(user){
           $scope.user = user;
           $scope.nombre = user.nombre;

@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('roverApp')
-  .factory('mailer', function($http,$q,vin,firebaseService){
+  .factory('mailer', function($http,$q,vin,firebaseService,LSVIN){
     var mailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return {
       submitForm : function(obj){
         /* jshint camelcase: false*/
         var defer = $q.defer(),
             person = {},
-            vinNum = localStorage.getItem('vinNum');
+            vinNum = localStorage.getItem(LSVIN);
         vin.getUser(vinNum).then(function(user){
           person = user;
           var template = '';

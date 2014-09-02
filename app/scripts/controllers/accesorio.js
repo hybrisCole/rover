@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('roverApp')
-  .controller('AccesorioCtrl', function ($scope,$routeParams,$location,vin,mailer) {
-    var vinNum  = localStorage.getItem('vinNum');
+  .controller('AccesorioCtrl', function ($scope,$routeParams,$location,vin,mailer,LSVIN) {
+    var vinNum  = localStorage.getItem(LSVIN);
     var codigo  = $routeParams.id;
     $scope.msj  = 'Encargar';
     vin.getUser(vinNum).then(function(user){

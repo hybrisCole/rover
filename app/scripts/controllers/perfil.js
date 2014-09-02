@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('roverApp')
-  .controller('PerfilCtrl', function ($scope,$location,firebaseService,vin) {
+  .controller('PerfilCtrl', function ($scope,$location,firebaseService,vin,LSVIN) {
     $scope.btnGuardarTexto = 'Guardar';
     firebaseService
-      .getPerfilInfo(localStorage.getItem('vinNum'))
+      .getPerfilInfo(localStorage.getItem(LSVIN))
       .then(function(perfilFireInfo){
         if(perfilFireInfo.email === ''){
-          vin.getUser(localStorage.getItem('vinNum')).then(function(user){
+          vin.getUser(localStorage.getItem(LSVIN)).then(function(user){
             $scope.perfilInfo = {
               email:user.correo,
               celular:user.telefono
@@ -19,13 +19,13 @@ angular.module('roverApp')
 
       });
     $scope.cerrarSession = function(){
-    	localStorage.removeItem('vinNum');
+    	localStorage.removeItem(LSVIN);
       vin.cerrarSesion();
     	$location.path('/');
     };
     $scope.guardarDatos = function(){
       $scope.btnGuardarTexto = 'Guardando...';
-      firebaseService.setPerfilInfo(localStorage.getItem('vinNum'),
+      firebaseService.setPerfilInfo(localStorage.getItem(LSVIN),
         $scope.perfilInfo).then(function(){
           $scope.btnGuardarTexto = 'Listo!';
         });

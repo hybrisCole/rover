@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('roverApp')
-  .controller('HistorialCtrl', function ($scope,vin){
-	var vinNum = localStorage.getItem('vinNum');
+  .controller('HistorialCtrl', function ($scope,vin,LSVIN){
+	var vinNum = localStorage.getItem(LSVIN);
     vin.getUser(vinNum).then(function(user){
       $scope.historial = _.map(user.historial, function(hist){
       	var obj = {

@@ -8,14 +8,14 @@
  * Controller of the roverApp
  */
 angular.module('roverApp')
-  .controller('MainCtrl', function ($scope,$location,vin,firebaseService){
+  .controller('MainCtrl', function ($scope,$location,vin,firebaseService,LSVIN){
   	$scope.vin = '';
 
     $scope.sendVin = function(){
       if($scope.vin !== ''){
         vin.getUser($scope.vin).then(function(data){
           if(!_.isEmpty(data)){
-            localStorage.setItem('vinNum',$scope.vin);
+            localStorage.setItem(LSVIN,$scope.vin);
             $scope.viewAnimation = 'slide-velocity-next';
             firebaseService.getPerfilInfo($scope.vin)
               .then(function(perfilInfo){

@@ -52,7 +52,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).run(function($rootScope,$location,$timeout,vin,FIREBASEURL){
+  }).run(function($rootScope,$location,$timeout,vin,FIREBASEURL,LSVIN){
 
     var authRef = new Firebase(FIREBASEURL),
         auth = new FirebaseSimpleLogin(authRef,function(){});
@@ -75,8 +75,8 @@ angular
         $rootScope.menu = false;
       }
 
-      if(!_.isUndefined(localStorage.getItem('vinNum')) && $location.path() === '/'){
-        vin.getUser(localStorage.getItem('vinNum')).then(function(data){
+      if(!_.isUndefined(localStorage.getItem(LSVIN)) && $location.path() === '/'){
+        vin.getUser(localStorage.getItem(LSVIN)).then(function(data){
           if(!_.isEmpty(data)){
             $location.path('/home');
           }else{
