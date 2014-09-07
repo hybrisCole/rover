@@ -5,6 +5,7 @@ angular.module('roverApp')
     var vinNum  = localStorage.getItem(LSVIN);
     var codigo  = $routeParams.id;
     $scope.msj  = 'Encargar';
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate;
     vin.getUser(vinNum).then(function(user){
       var model = user.modelo.replace(/\s/g, '').toLowerCase();
       var objM  = [
