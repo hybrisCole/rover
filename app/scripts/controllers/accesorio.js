@@ -26,27 +26,29 @@ angular.module('roverApp')
         var currentIndex = _.indexOf(data.accesorios, acce[0]);
 
         $scope.left = function(){
-        	currentIndex = currentIndex - 1;
-        	if(currentIndex < 0){
-        		currentIndex = 0;
-        		navigator.vibrate(1000);
-        	}
+          currentIndex = currentIndex + 1;
+          if(currentIndex > data.accesorios.length - 1){
+            currentIndex = data.accesorios.length - 1;
+            navigator.vibrate(1000);
+          }
+          $scope.viewAnimation = 'slide-velocity-next';
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
         };
 
         $scope.right = function(){
-        	currentIndex = currentIndex + 1;
-        	if(currentIndex > data.accesorios.length - 1){
-        		currentIndex = data.accesorios.length - 1;
-        		navigator.vibrate(1000);
-        	}
+        	currentIndex = currentIndex - 1;
+          if(currentIndex < 0){
+            currentIndex = 0;
+            navigator.vibrate(1000);
+          }
+          $scope.viewAnimation = 'slide-velocity-previous';
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
         };
 
         $scope.encargo = function(){
         	console.log(data.accesorios[currentIndex]);
         	var obj = {
-            'subj' : 'ENCARGO APP',
+            'subj' : 'Ventas APP',
             'type' : 'EN',
             'acc'  : data.accesorios[currentIndex]
           };

@@ -23,8 +23,8 @@ angular.module('roverApp')
       $scope.viewAnimation = 'slide-velocity-next';
       $location.path(location);
     };
+
     $scope.goBack = function(location){
-      console.log(location);
       $scope.viewAnimation = 'slide-velocity-previous';
       $location.path(location);
       $rootScope.$broadcast('goBack');

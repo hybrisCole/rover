@@ -18,7 +18,7 @@ angular.module('roverApp')
         $scope.msj = 'Agendar Revisión';
         $scope.agendar = function(){      
           var obj = {
-            'subj'     : 'REVISION APP',
+            'subj'     : 'Citas APP',
             'type'     : 'R',
             'fecha'    : $scope.proximaFecha,
             'km'       : $scope.user.kmProximaRev,
