@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('roverApp')
-  .controller('AccesorioCtrl', function ($scope,$routeParams,$location,vin,mailer,LSVIN) {
+  .controller('AccesorioCtrl', function ($scope,$routeParams,
+     $location,$rootScope,vin,mailer,LSVIN) {
     var vinNum  = localStorage.getItem(LSVIN);
     var codigo  = $routeParams.id;
     $scope.msj  = 'Encargar';
@@ -27,22 +28,22 @@ angular.module('roverApp')
         var currentIndex = _.indexOf(data.accesorios, acce[0]);
 
         $scope.left = function(){
-          currentIndex = currentIndex + 1;
+          currentIndex += 1;
           if(currentIndex > data.accesorios.length - 1){
             currentIndex = data.accesorios.length - 1;
             navigator.vibrate(1000);
           }
-          $scope.viewAnimation = 'slide-velocity-next';
+          $rootScope.viewAnimation = 'slide-velocity-next';
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
         };
 
         $scope.right = function(){
-        	currentIndex = currentIndex - 1;
+        	currentIndex -= 1;
           if(currentIndex < 0){
             currentIndex = 0;
             navigator.vibrate(1000);
           }
-          $scope.viewAnimation = 'slide-velocity-previous';
+          $rootScope.viewAnimation = 'slide-velocity-previous';
         	$location.path('/accesorio/'+data.accesorios[currentIndex].codigo);
         };
 

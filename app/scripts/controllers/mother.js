@@ -18,14 +18,14 @@ angular.module('roverApp')
       }
     });
     
-    $scope.viewAnimation = 'slide-velocity-next';
-    $scope.goTo = function(location){
-      $scope.viewAnimation = 'slide-velocity-next';
+    $rootScope.viewAnimation = 'slide-velocity-next';
+    $rootScope.goTo = function(location){
+      $rootScope.viewAnimation = 'slide-velocity-next';
       $location.path(location);
     };
 
-    $scope.goBack = function(location){
-      $scope.viewAnimation = 'slide-velocity-previous';
+    $rootScope.goBack = function(location){
+      $rootScope.viewAnimation = 'slide-velocity-previous';
       $location.path(location);
       $rootScope.$broadcast('goBack');
     };
